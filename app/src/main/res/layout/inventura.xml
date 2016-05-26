@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+    <EditText
+    android:id="@+id/inputAll"
+    android:visibility="gone"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
+        android:singleLine="true"
+        android:inputType="number"/>
+
+    <TextView
+    android:id="@+id/inputAllUser"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+        
+    <TextView
+    android:id="@+id/inputAllServer"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+    
+    <TextView
+    	android:id="@+id/kosikIco"
+        android:textSize="17sp"
+    	android:visibility="gone"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+     <TextView
+    	android:id="@+id/kosikOdbm"
+        android:textSize="17sp"
+    	android:visibility="gone"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+     
+     <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+         <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popisean"
+        android:id="@+id/popisEan"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:textSize="14sp"       
+        android:layout_weight="2"/>
+         
+         <EditText
+    	android:id="@+id/inputEan"
+    	android:visibility="visible"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
+        android:singleLine="true"
+        android:inputType="number"
+    	android:layout_weight="1" />
+         
+         
+         <Button
+    	android:id="@+id/btnScan"
+    	android:text="@string/scan"
+    	android:visibility="visible"
+    	android:layout_width="match_parent"
+    	android:layout_height="40dp"
+    	android:layout_margin="5dp"
+    	android:textSize="14sp"
+    	android:layout_weight="2" />
+
+        
+    </LinearLayout>
+    
+     
+     <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+         <TextView
+            android:text="@string/popiscis"
+    		android:visibility="visible"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_margin="1dp"
+        	android:layout_marginBottom="1dp"
+    		android:layout_weight="2" />
+         
+         <TextView
+            android:text="@string/popiseditname"
+    		android:visibility="visible"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_margin="1dp"
+    		android:layout_marginBottom="1dp"
+    		android:layout_weight="1" />
+
+    	</LinearLayout>
+    
+     <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+         <EditText
+    	android:id="@+id/inputCis"
+    	android:visibility="visible"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
+        android:singleLine="true"
+        android:inputType="number"
+    	android:layout_weight="2" />
+         
+         <Button
+    	android:id="@+id/inputNaz"
+    	android:text="@string/konthladaj"
+    	android:visibility="visible"
+    	android:layout_width="match_parent"
+    	android:layout_height="40dp"
+    	android:layout_margin="5dp"
+    	android:textSize="14sp"
+    	android:layout_weight="1" />
+         
+         
+
+        
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+         
+        <TextView
+            android:text="@string/popiseditprice"
+    		android:visibility="visible"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_margin="1dp"
+        	android:layout_marginBottom="1dp"
+    		android:layout_weight="1" />
+
+         <TextView
+            android:text="@string/popiseditmnoz"
+    		android:visibility="visible"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_margin="1dp"
+        	android:layout_marginBottom="1dp"
+    		android:layout_weight="1" />
+         
+         <TextView
+            android:text="@string/popiseditmj"
+    		android:visibility="visible"
+    		android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_margin="1dp"
+    		android:layout_marginBottom="1dp"
+    		android:layout_weight="1" />
+         
+
+    	</LinearLayout>
+    
+     <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+         
+         <EditText
+    	android:id="@+id/inputCed"
+    	android:visibility="visible"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
+        android:singleLine="true"
+        android:inputType="numberDecimal"
+    	android:layout_weight="1" />
+
+         <EditText
+    	android:id="@+id/inputMno"
+    	android:visibility="visible"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
+        android:singleLine="true"
+        android:inputType="numberDecimal"
+    	android:layout_weight="1" />
+         
+         <EditText
+    	android:id="@+id/inputMer"
+    	android:visibility="visible"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
+        android:singleLine="true"
+        android:inputType="text"
+    	android:layout_weight="1" />
+           
+    </LinearLayout>
+    
+      
+
+     <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">      
+
+        <TextView
+    	android:id="@+id/kosikMnoz"
+        android:layout_weight="1"
+        android:textSize="17sp"
+    	android:visibility="gone"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+                 
+    	<TextView
+    	android:id="@+id/kosikBdph"
+        android:layout_weight="1"
+        android:textSize="17sp"
+    	android:visibility="gone"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+    	
+    	<TextView
+    	android:id="@+id/kosikSdph"
+        android:layout_weight="1"
+        android:textSize="17sp"
+    	android:visibility="gone"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+    	
+    
+     </LinearLayout>
+     
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">      
+ 
+        <Button android:id="@+id/btnObjednaj"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popiseditsave"
+        android:layout_weight="1"/>
+        
+        <Button android:id="@+id/btnPoznamka"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popisbtnpoznamka"
+        android:layout_weight="1"/>
+                 
+    	<TextView
+    	android:id="@+id/obsahKosika"
+        android:layout_weight="1"
+        android:textSize="19sp"
+    	android:visibility="gone"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content" />
+    	
+    	<Button android:id="@+id/btnFakturuj"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popisbtnfakturuj"
+        android:layout_weight="1"/>
+    
+     </LinearLayout>
+    
+    <!-- Main ListView
+         Always give id value as list(@android:id/list)
+    -->
+    
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+ 
+</LinearLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">invEANtory</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+
+    <string name="app_namesd">invEANtory SD</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="settings">Settings</string>
+    <string name="setnostoreinventory">Inputed pattern -> present pattern</string>
+    <string name="setnostore">Inputed pattern -> present pattern</string>
+    <string name="delinventory">Del present inventory</string>
+    <string name="delinventory_nostore">Del inputed pattern</string>
+    <string name="demoresources">Set demo pattern</string>
+    <string name="delinventoryok">Inventory deleted (renamed).</string>
+
+    <string name="servername_title">Server name.</string>
+    <string name="servername_summary">Server name to which you want to connect, for example www.ala.sk/androideshop</string>
+
+    <string name="nickname_title">Your nickname.</string>
+    <string name="nickname_summary">To marking orders</string>
+
+    <string name="druhid_title">Type of user.</string>
+    <string name="druhid_summary">The priority 0,10,20,99 sets program when you connect</string>
+
+    <string name="userid_title">User number.</string>
+    <string name="userid_summary">Set the program to connect to the Fantozzi- do not change the value</string>
+
+    <string name="mojmail_title">E-mail address.</string>
+    <string name="mojmail_summary">Is not required, we will send you access details</string>
+
+    <string name="username_title">Username.</string>
+    <string name="username_summary">Just for the administrator functions. For ordering is not required.</string>
+
+    <string name="userpsw_title">User password.</string>
+    <string name="userpsw_summary">Just for the administrator functions. For ordering is not required.</string>
+
+    <string name="nostnum_title">Default number.</string>
+    <string name="nostnum_summary">Default pattern item number.</string>
+
+    <string name="nostname_title">Default name.</string>
+    <string name="nostname_summary">Default pattern item name.</string>
+
+    <string name="nostprice_title">Default price.</string>
+    <string name="nostprice_summary">Default pattern item price.</string>
+
+    <string name="nostvol_title">Default quantity.</string>
+    <string name="nostvol_summary">Default pattern item quantity.</string>
+
+    <string name="nostmer_title">Default unit of measure.</string>
+    <string name="nostmer_summary">Default pattern item unit of measure.</string>
+
+    <string name="sdkarta_title">Data on the web or locally.</string>
+    <string name="sdkarta_summary">0=WEB, 1=Phone, tablet</string>
+    <string name="lokaldata">Connection to the data in your phone or tablet.</string>
+    <string name="webdata">Connecting to </string>
+
+    <string name="fir_title">Number of company.</string>
+    <string name="fir_summary">Set the program to connect to Fantozzi.</string>
+
+    <string name="potrebujetelocaldata">You need data source for the local function of the program ! Let set in Settings Local Data and choose Demo store items </string>
+    <string name="niejelocaldata">You do not have a data source !</string>
+    <string name="potrebujeteinternet">The program needs an Internet connection for a proper function !</string>
+    <string name="niejeinternet">You do not have an Internet connection !</string>
+
+    <string name="kontzmaz">Delete</string>
+    <string name="kontnic">Back</string>
+    <string name="descimg">image</string>
+
+    <string name="textok">OK</string>
+    <string name="textyes">Yes</string>
+    <string name="textno">No</string>
+    <string name="page">Page</string>
+
+    <string name="btneanx">inputEAN</string>
+    <string name="btnean">Input EAN inventory</string>
+    <string name="btneanno">Input EAN patterns</string>
+    <string name="zostavyean">State of the stock</string>
+    <string name="rozdielyean">Inventory differences</string>
+    <string name="exportcsv1">Export to CSV</string>
+
+    <string name="inventura">Inventory</string>
+    <string name="popisean">EAN</string>
+    <string name="popiscis">Number</string>
+    <string name="popishod">Value</string>
+    <string name="popiseditname">Name</string>
+    <string name="popiseditprice">Price</string>
+    <string name="popiseditmnoz">Quantity</string>
+    <string name="popiseditmj">mj</string>
+    <string name="popiseditspecify">Item description</string>
+    <string name="popiseditdescription">Description</string>
+    <string name="popiseditsave">Save</string>
+    <string name="popiseditdelete">Delete</string>
+    <string name="popisbtnfakturuj">Invoice</string>
+    <string name="popisbtnpoznamka">Note</string>
+    <string name="progallproducts">Loading the products. Please wait.</string>
+    <string name="progsavproduct">Saving product. Please wait.</string>
+    <string name="progdelproduct">Deleting product. Please wait.</string>
+    <string name="popisbtnzfak">of invoices</string>
+    <string name="popisbtnzcis">of default</string>
+    <string name="title_activity_poznamkakosik">Note</string>
+    <string name="popisDap">Date</string>
+    <string name="popisCislo">Number</string>
+    <string name="popisRetazec">Text</string>
+    <string name="popishore">Ascending</string>
+    <string name="popisdole">Descending</string>
+
+    <string name="action_previous">Back</string>
+    <string name="action_next">Next</string>
+
+    <string name="popisstavean">State of the stock EAN</string>
+    <string name="popisstavcis">State of the stock CIS</string>
+    <string name="popisstavnat">State of the stock Name</string>
+    <string name="popisstavhod">State of the stock Value</string>
+
+    <string name="popisrozdean">Inventory differences EAN</string>
+    <string name="popisrozdcis">Inventory differences CIS</string>
+    <string name="popisrozdnat">Inventory differences Name</string>
+    <string name="popisrozdhod">Inventory differences Value</string>
+
+    <string name="popiscsvstav">Stock levels export CSV, XLS</string>
+    <string name="popiscsvrozd">Export of inventory differences CSV, XLS</string>
+    <string name="popisprenosstav">Transfer of Store to the FTP Server</string>
+    <string name="popisprenosstavno">Transfer of Pattern to the FTP Server</string>
+
+    <string name="popisbtnpokl">Cash register</string>
+    <string name="popisbtnbanka">Bank</string>
+    <string name="popisbtndod1">Suppliers</string>
+    <string name="popisbtnodb1">Customers</string>
+    <string name="popisbtndod1k">Supplier</string>
+    <string name="popisbtnodb1k">Customer</string>
+    <string name="kontnextpage">Next page</string>
+    <string name="kontprevpage">Previous page</string>
+    <string name="konthladaj">Seeking</string>
+    <string name="kontvsetky">All</string>
+    <string name="progpokl">Loading a cash register. Please wait.</string>
+    <string name="preniest">Transfer the data to the server</string>
+
+    <string name="prenosstart"> Upload Started </string>
+    <string name="prenesene"> transferred </string>
+    <string name="prenoskomplet"> completed </string>
+    <string name="prenosabort"> transfer aborted </string>
+    <string name="prenosfail"> failed </string>
+    <string name="ftpserver_title">FTP server</string>
+    <string name="ftpserver_popis">Transfer inventory on FTP (82.82.33.21)</string>
+    <string name="ftpuser_title">FTP user</string>
+    <string name="ftpuser_popis">for login on FTP server</string>
+    <string name="ftppsw_title">FTP password</string>
+    <string name="ftppsw_popis">for login on FTP server</string>
+
+    <string name="skladovepol">stock items</string>
+    <string name="scan">Scan</string>
+
+    <string name="bank">Cat.</string>
+    <string name="sent">Sent</string>
+    <string name="objednavka">Pattern</string>
+    <string name="popisbtnrefresh">Update</string>
+    <string name="endorder">End history menu</string>
+    <string name="deleteall">Delete all history</string>
+    <string name="popisbtnobjednaj">->STORE</string>
+    <string name="title_activity_mojeobj">History patterns</string>
+    <string name="title_activity_mojeobjdetaily">Detail of PATTERN</string>
+    <string name="okobjorder">Again to store</string>
+    <string name="objordermes">Do you want to move again</string>
+    <string name="objorder">Again move</string>
+    <string name="deleteallorder">Delete all patterns</string>
+    <string name="deleteallordermes">Do you want to delete all patterns</string>
+    <string name="okdeleteallordermes">Deleted all patterns</string>
+    <string name="nodeleteordermes">Not deleted pattern</string>
+    <string name="nodeleteallordermes">Not deleted all patterns</string>
+    <string name="deleteorder">Delete pattern</string>
+    <string name="deleteordermes">Do you want to delete pattern</string>
+    <string name="okdeleteordermes">Deleted pattern</string>
+
+    <!-- Nav Drawer -->
+    <string name="slider">Slider</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+    <string name="desc">Desc</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Input inventory</item>
+        <item >Input patterns</item>
+        <item >State of the stock</item>
+        <item >Inventory differences</item>
+        <item >Export to CSV</item>
+        <item >Settings</item>
+    </string-array>
+
+    <string name="app_name1">Slider Menu 1</string>
+    <string name="app_name2">Slider Menu 2</string>
+    <string name="desc_list_item_icon">Item Icon</string>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/item_circle</item>
+        <item>@drawable/item_circle</item>
+        <item>@drawable/item_circle</item>
+        <item>@drawable/item_circle</item>
+        <item>@drawable/item_circle</item>
+        <item>@drawable/item_circle</item>
+    </array>
+
+</resources>

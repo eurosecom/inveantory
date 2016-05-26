@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+       
+
+    <item
+        android:id="@+id/mojeobj"
+        android:title="@string/title_activity_mojeobj">
+    </item>
+    <item
+        android:id="@+id/preferences"
+        android:title="@string/settings">
+    </item>
+    <item
+        android:id="@+id/setnostroreinventory"
+        android:title="@string/setnostoreinventory">
+    </item>
+    <item
+        android:id="@+id/delinventory"
+        android:title="@string/delinventory">
+    </item>
+    <item
+        android:id="@+id/delinventory_nostore"
+        android:title="@string/delinventory_nostore">
+    </item>
+    <item
+        android:id="@+id/demoresources"
+        android:title="@string/demoresources">
+    </item>
+
+
+    
+</menu>

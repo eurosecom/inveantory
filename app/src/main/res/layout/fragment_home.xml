@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+
+
+        <Button android:id="@+id/btnEan"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnean"
+            android:layout_marginTop="15dip"/>
+
+        <Button android:id="@+id/btnEanno"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btneanno"
+            android:layout_marginTop="15dip"/>
+
+        <Button android:id="@+id/zostavyEan"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/zostavyean"
+            android:layout_marginTop="15dip"/>
+
+        <Button android:id="@+id/rozdielyEan"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rozdielyean"
+            android:layout_marginTop="15dip"/>
+
+        <Button android:id="@+id/exportCsv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exportcsv1"
+            android:layout_marginTop="15dip"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+
+        <ImageView
+            android:contentDescription="@string/descimg"
+            android:id="@+id/eanobr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/eaninventory"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

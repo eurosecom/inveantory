@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sdkarta_names">
+        <item>Date web</item>
+        <item>Date phone, tablet</item>
+    </string-array>
+    
+    <string-array name="sdkarta_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    
+    <string-array name="order_by_names">
+        <item>ProductNum</item>
+        <item>Názov</item>
+        <item>Cena</item>
+    </string-array>
+    
+    <string-array name="order_by_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    
+    <string-array name="rating_names">
+        <item>Farba 1</item>
+        <item>Farba 2</item>
+        <item>Farba 3</item>
+        <item>Farba 4</item>
+        <item>Farba 5</item>
+    </string-array>
+    
+    <string-array name="rating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    
+    <integer-array name="rating_colors">
+        <item>0xffbb0000</item>
+        <item>0xffbb5400</item>
+        <item>0xffbb8d00</item>
+        <item>0xffa3bb00</item>
+        <item>0xff17a600</item>
+    </integer-array>
+    
+</resources>

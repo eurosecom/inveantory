@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+      
+        <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">      
+ 
+        <Button android:id="@+id/btnEan2"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="@string/btneanx"
+        android:layout_weight="1"/>
+                 
+    	<TextView
+    	android:id="@+id/obsahKosika"
+	    android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="17sp"
+    	android:visibility="invisible"
+    	android:layout_width="match_parent"
+    	android:layout_height="60dp" />
+    	
+    	<Button android:id="@+id/btninfo"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        android:layout_weight="1"/>
+    
+     </LinearLayout>
+    
+    
+    <Button android:id="@+id/btnRozdean"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popisrozdean"
+        android:layout_marginTop="5dip"/>
+    
+    <Button android:id="@+id/btnRozdcis"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popisrozdcis"
+        android:layout_marginTop="5dip"/>
+    
+    <Button android:id="@+id/btnRozdnat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popisrozdnat"
+        android:layout_marginTop="5dip"/>
+    
+    <Button android:id="@+id/btnRozdhod"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/popisrozdhod"
+        android:layout_marginTop="5dip"/>
+    
+
+ 
+
+  			     
+</LinearLayout>
