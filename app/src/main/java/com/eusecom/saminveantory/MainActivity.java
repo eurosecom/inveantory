@@ -40,8 +40,8 @@ public class MainActivity extends ActionBarActivity {
     //This Icons And Titles Are holded in an Array as you can see
 
     private String[] navMenuTitles;
-    int ICONS[] = {R.drawable.ic_search_black_24dp,R.drawable.ic_search_black_24dp,R.drawable.ic_search_black_24dp,
-            R.drawable.ic_search_black_24dp,R.drawable.ic_search_black_24dp,R.drawable.ic_settings_black_24dp};
+    int ICONS[] = {R.drawable.ic_scanner_black_24dp,R.drawable.ic_scanner_black_24dp,R.drawable.ic_store_black_24dp,
+            R.drawable.ic_exposure_black_24dp,R.drawable.ic_file_upload_black_24dp,R.drawable.ic_settings_black_24dp};
 
     //Similarly we Create a String Resource for the name and email in the header view
     //And we also create a int resource for profile picture in the header view

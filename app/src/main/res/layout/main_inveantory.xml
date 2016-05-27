@@ -20,25 +20,45 @@
 			layout="@layout/toolbar_custom">
 		</include>
 
-		<Button android:id="@+id/btnEan"
+
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/btnean"
-			android:layout_marginTop="15dip"/>
+			android:layout_height="fill_parent">
+
+		<Button android:id="@+id/btnEan"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+			android:text="@string/btnean"/>
 
 		<Button android:id="@+id/btnEanno"
-			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="@string/btneanno"
-			android:layout_marginTop="15dip"/>
+			android:layout_width="wrap_content"
+			android:layout_marginTop="10dp"
+			android:layout_centerHorizontal="true"
+			android:layout_below="@+id/btnEan"
+			android:text="@string/btneanno"/>
+
+			<TextView
+				android:id="@+id/iprofit"
+				android:visibility="invisible"
+				android:layout_width="wrap_content"
+				android:layout_height="1dp"
+				android:layout_alignParentRight="true"
+				android:layout_below="@+id/btnEanno"/>
 
 		<ImageView
 			android:contentDescription="@string/descimg"
 			android:id="@+id/eanobr"
-			android:layout_width="match_parent"
+			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center"
+            android:layout_centerInParent="true"
+			android:layout_alignParentBottom="true"
+            android:layout_below="@+id/iprofit"
 			android:src="@drawable/eaninventory"/>
+
+		</RelativeLayout>
 
 	</LinearLayout>
 
