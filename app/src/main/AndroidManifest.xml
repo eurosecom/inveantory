@@ -58,6 +58,10 @@
             android:label="@string/inventura" >
         </activity>
         <activity
+            android:name="com.eusecom.saminveantory.NaserverActivity"
+            android:label="@string/inventura" >
+        </activity>
+        <activity
             android:name="com.eusecom.saminveantory.DemoinvActivity"
             android:label="@string/inventura" >
         </activity>

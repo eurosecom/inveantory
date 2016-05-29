@@ -128,7 +128,7 @@
 
     <string name="popiscsvstav">Stock levels export CSV, XLS</string>
     <string name="popiscsvrozd">Export of inventory differences CSV, XLS</string>
-    <string name="popisprenosstav">Transfer of Store to the FTP Server</string>
+    <string name="popisprenosstav">Transfer of inventory to the FTP Server</string>
     <string name="popisprenosstavno">Transfer of Pattern to the FTP Server</string>
 
     <string name="popisbtnpokl">Cash register</string>
