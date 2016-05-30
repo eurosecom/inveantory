@@ -11,5 +11,5 @@ Android App for EAN inventory scanning.
 
 Video input EAN inventory.
 
-[linkname](https://youtu.be/FGv5ddzRNGM)
+[YpuTube Video - input EAN inventory.](https://youtu.be/FGv5ddzRNGM)
 
