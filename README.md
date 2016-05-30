@@ -13,3 +13,7 @@ Video input EAN inventory.
 
 [YouTube Video - input EAN inventory.(http://img.youtube.com/vi/FGv5ddzRNGM/0.jpg)](https://youtu.be/FGv5ddzRNGM)
 
+
+[YouTube Video - input EAN inventory.(http://img.youtube.com/vi/FGv5ddzRNGM/0.jpg)](https://youtube.com/watch?v=FGv5ddzRNGM)
+
+
