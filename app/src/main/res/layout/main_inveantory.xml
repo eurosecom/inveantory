@@ -27,15 +27,15 @@
 
 		<Button android:id="@+id/btnEan"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_width="200dp"
+            android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true"
 			android:text="@string/btnean"/>
 
 		<Button android:id="@+id/btnEanno"
 			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_marginTop="10dp"
+			android:layout_width="200dp"
+			android:layout_marginTop="15dp"
 			android:layout_centerHorizontal="true"
 			android:layout_below="@+id/btnEan"
 			android:text="@string/btneanno"/>

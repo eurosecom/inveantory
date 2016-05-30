@@ -176,6 +176,13 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        if (id == R.id.mojeobj) {
+
+            Intent is = new Intent(getApplicationContext(), VladciSDActivity.class);
+            startActivity(is);
+            return true;
+        }
+
         if (id == R.id.preferences) {
 
             Intent is = new Intent(getApplicationContext(), MyPreferencesActivity.class);

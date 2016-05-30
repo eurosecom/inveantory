@@ -66,7 +66,7 @@
     <string name="fir_title">Number of company.</string>
     <string name="fir_summary">Set the program to connect to Fantozzi.</string>
 
-    <string name="potrebujetelocaldata">You need data source for the local function of the program ! Let set in Settings Local Data and choose Demo store items </string>
+    <string name="potrebujetelocaldata">You need data source for the local function of the program ! Let set in Settings Local Data and choose Demo pattern items </string>
     <string name="niejelocaldata">You do not have a data source !</string>
     <string name="potrebujeteinternet">The program needs an Internet connection for a proper function !</string>
     <string name="niejeinternet">You do not have an Internet connection !</string>
@@ -83,7 +83,7 @@
     <string name="btneanx">inputEAN</string>
     <string name="btnean">Input EAN inventory</string>
     <string name="btneanno">Input EAN patterns</string>
-    <string name="zostavyean">State of the stock</string>
+    <string name="zostavyean">List of the inventory</string>
     <string name="rozdielyean">Inventory differences</string>
     <string name="exportcsv1">Export to CSV</string>
 
@@ -116,18 +116,18 @@
     <string name="action_previous">Back</string>
     <string name="action_next">Next</string>
 
-    <string name="popisstavean">State of the stock EAN</string>
-    <string name="popisstavcis">State of the stock CIS</string>
-    <string name="popisstavnat">State of the stock Name</string>
-    <string name="popisstavhod">State of the stock Value</string>
+    <string name="popisstavean">Inventory by EAN</string>
+    <string name="popisstavcis">Inventory by Number</string>
+    <string name="popisstavnat">Inventory by Name</string>
+    <string name="popisstavhod">Inventory by Value</string>
 
-    <string name="popisrozdean">Inventory differences EAN</string>
-    <string name="popisrozdcis">Inventory differences CIS</string>
-    <string name="popisrozdnat">Inventory differences Name</string>
-    <string name="popisrozdhod">Inventory differences Value</string>
+    <string name="popisrozdean">Inventory differences by EAN</string>
+    <string name="popisrozdcis">Inventory differences by Number</string>
+    <string name="popisrozdnat">Inventory differences by Name</string>
+    <string name="popisrozdhod">Inventory differences by Value</string>
 
-    <string name="popiscsvstav">Stock levels export CSV, XLS</string>
-    <string name="popiscsvrozd">Export of inventory differences CSV, XLS</string>
+    <string name="popiscsvstav">Inventory export to CSV, XLS</string>
+    <string name="popiscsvrozd">Differences export to CSV, XLS</string>
     <string name="popisprenosstav">Transfer of inventory to the FTP Server</string>
     <string name="popisprenosstavno">Transfer of Pattern to the FTP Server</string>
 
@@ -165,12 +165,12 @@
     <string name="popisbtnrefresh">Update</string>
     <string name="endorder">End history menu</string>
     <string name="deleteall">Delete all history</string>
-    <string name="popisbtnobjednaj">->STORE</string>
+    <string name="popisbtnobjednaj">->Pattern</string>
     <string name="title_activity_mojeobj">History patterns</string>
     <string name="title_activity_mojeobjdetaily">Detail of PATTERN</string>
-    <string name="okobjorder">Again to store</string>
-    <string name="objordermes">Do you want to move again</string>
-    <string name="objorder">Again move</string>
+    <string name="okobjorder">Again to pattern</string>
+    <string name="objordermes">Do you want to move to pattern again</string>
+    <string name="objorder">Again move to pattern</string>
     <string name="deleteallorder">Delete all patterns</string>
     <string name="deleteallordermes">Do you want to delete all patterns</string>
     <string name="okdeleteallordermes">Deleted all patterns</string>
@@ -190,7 +190,7 @@
     <string-array name="nav_drawer_items">
         <item >Input inventory</item>
         <item >Input patterns</item>
-        <item >State of the stock</item>
+        <item >List of inventory</item>
         <item >Inventory differences</item>
         <item >Export to CSV</item>
         <item >Settings</item>

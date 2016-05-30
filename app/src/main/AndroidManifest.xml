@@ -51,7 +51,7 @@
         </activity>
         <activity
             android:name="com.eusecom.saminveantory.MyPreferencesActivity"
-            android:label="@string/title_activity_poznamkakosik" >
+            android:label="@string/action_settings" >
         </activity>
         <activity
             android:name="com.eusecom.saminveantory.InvsetActivity"
@@ -63,6 +63,30 @@
         </activity>
         <activity
             android:name="com.eusecom.saminveantory.DemoinvActivity"
+            android:label="@string/inventura" >
+        </activity>
+        <activity
+            android:name="com.eusecom.saminveantory.RozdielyActivity"
+            android:label="@string/inventura" >
+        </activity>
+        <activity
+            android:name="com.eusecom.saminveantory.PrenosCSVActivity"
+            android:label="@string/inventura" >
+        </activity>
+        <activity
+            android:name="com.eusecom.saminveantory.VladciSDActivity"
+            android:label="@string/inventura" >
+        </activity>
+        <activity
+        android:name="com.eusecom.saminveantory.DetailSDActivity"
+        android:label="@string/inventura" >
+        </activity>
+        <activity
+            android:name="com.eusecom.saminveantory.ObjednajOrderSDActivity"
+            android:label="@string/inventura" >
+        </activity>
+        <activity
+            android:name="com.eusecom.saminveantory.ZmazOrderSDActivity"
             android:label="@string/inventura" >
         </activity>
     </application>
