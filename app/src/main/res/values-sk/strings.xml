@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">invEANtúra</string>
+    <string name="app_namesd">invEANtúra SD</string>
+    <string name="action_settings">Nastavenie</string>
+    <string name="hello_world">Ahoj svet!</string>
+
+    <string name="settings">Nastavenia</string>
+    <string name="setnostoreinventory">Nastaviť nahratý vzor do aktuálneho</string>
+    <string name="setnostore">Vzor do aktuálneho vzoru</string>
+    <string name="delinventory">Zmazať nahratú inventúru</string>
+    <string name="delinventory_nostore">Zmazať nahratý vzor</string>
+    <string name="demoresources">Nastaviť Demo vzor</string>
+    <string name="delinventoryok">Nahratá inventúra vymazaná (premenovaná).</string>
+    
+    <string name="servername_title">Názov servera.</string>
+    <string name="servername_summary">Názov servera, ku ktorému sa chcete pripojiť napríklad www.ala.sk/androideshop</string>
+ 
+    <string name="nickname_title">Váš nickname.</string>
+    <string name="nickname_summary">Pre označenie objednávky</string>
+
+    <string name="druhid_title">Druh užívateľa.</string>
+    <string name="druhid_summary">Priorita 0,10,20,99 nastaví program pri pripojení</string>
+    
+    <string name="userid_title">Číslo užívateľa.</string>
+    <string name="userid_summary">Nastaví program pri pripojení na Fantozziho - nemente hodnotu</string>
+
+    <string name="mojmail_title">Mailová adresa.</string>
+    <string name="mojmail_summary">Nie je povinná, pošleme Vám na ňu prístupové údaje</string>
+    
+    <string name="username_title">Prihlasovacie meno užívateľa.</string>
+    <string name="username_summary">Len pre administrátorké funkcie, pre objednávanie nepotrebujete.</string>
+
+    <string name="userpsw_title">Heslo užívateľa.</string>
+    <string name="userpsw_summary">Len pre administrátorké funkcie, pre objednávanie nepotrebujete.</string>
+    
+    <string name="nostnum_title">Default číslo.</string>
+    <string name="nostnum_summary">Default číslo položky v nahrávaní vzorov.</string>
+    
+    <string name="nostname_title">Default názov.</string>
+    <string name="nostname_summary">Default názov položky v nahrávaní vzorov.</string>
+    
+    <string name="nostprice_title">Default cena.</string>
+    <string name="nostprice_summary">Default cena položky v nahrávaní vzorov.</string>
+    
+    <string name="nostvol_title">Default množstvo.</string>
+    <string name="nostvol_summary">Default množstvo položky v nahrávaní vzorov.</string>
+    
+    <string name="nostmer_title">Default merná jednotka.</string>
+    <string name="nostmer_summary">Default merná jednotka položky v nahrávaní vzorov.</string>
+    
+    <string name="sdkarta_title">Dáta na WEBe alebo lokálne.</string>
+    <string name="sdkarta_summary">0=WEB, 1=telefón, tablet</string>
+    <string name="lokaldata">Pripojenie k dátam v telefóne, tablete.</string>    
+    <string name="webdata">Pripojenie k </string>
+    
+    <string name="fir_title">Číslo nastavenej firmy.</string>
+    <string name="fir_summary">Nastaví program pri pripojení na Fantozziho.</string>
+    
+    <string name="potrebujetelocaldata">Pre lokálnu funkciu programu potrebujete dátové zdrojové súbory ! V nastavení zvolte Dáta lokálne a vyberte Demo skladové položky !</string>
+    <string name="niejelocaldata">Nemáte dátové zdrojové súbory !</string>
+    <string name="potrebujeteinternet">Pre správnu funkciu programu potrebujete pripojenie do Internetu !</string>
+    <string name="niejeinternet">Nemáte pripojenie do Internetu !</string>
+    
+    <string name="kontzmaz">Zmazať položku</string> 
+    <string name="kontnic">Späť</string>
+    <string name="descimg">image</string>
+    
+    <string name="textok">OK</string>
+    <string name="textyes">Áno</string>
+    <string name="textno">Nie</string>
+    <string name="page">str.</string>
+    
+    <string name="btneanx">vstupEAN</string>
+    <string name="btnean">Vstup EAN inventúry</string>
+    <string name="btneanno">Vstup EAN vzorov</string>
+    <string name="zostavyean">Stav zásob</string>
+    <string name="rozdielyean">Inventúrne rozdiely</string>
+    <string name="exportcsv1">Export do CSV</string>
+    
+    <string name="inventura">Inventúra</string>
+    <string name="popisean">EAN</string>
+    <string name="popiscis">Číslo</string>
+    <string name="popishod">Hodnota</string>
+    <string name="popiseditname">Názov</string>        
+    <string name="popiseditprice">Cena</string>        
+    <string name="popiseditmnoz">Množstvo</string>
+    <string name="popiseditmj">MJ</string>  
+    <string name="popiseditspecify">Popis položky</string>
+    <string name="popiseditdescription">Popis</string>
+    <string name="popiseditsave">Uložiť</string>
+    <string name="popiseditdelete">Zmazať</string>
+    <string name="popisbtnfakturuj">Faktúrovať</string>
+    <string name="popisbtnpoznamka">Poznámka</string>
+    <string name="progallproducts">Čítam produkty. Prosím čakajte.</string>
+    <string name="progsavproduct">Ukladám produkt. Prosím čakajte.</string>
+    <string name="progdelproduct">Mažem produkt. Prosím čakajte.</string>
+    <string name="popisbtnzfak">z faktúr</string>
+    <string name="popisbtnzcis">z predvolených</string>
+    <string name="title_activity_poznamkakosik">Poznámka </string>
+    <string name="popisDap">Dátum</string>
+    <string name="popisCislo">Číslo</string>
+    <string name="popisRetazec">Text</string>
+    <string name="popishore">Vzost.</string>
+    <string name="popisdole">Zost.</string>
+    
+    <string name="action_previous">Späť</string>
+    <string name="action_next">Ďalej</string>
+    
+    <string name="popisstavean">Inventúra podľa EAN</string>
+    <string name="popisstavcis">Inventúra podľa CIS</string>
+    <string name="popisstavnat">Inventúra podľa názvu</string>
+    <string name="popisstavhod">Inventúra podľa hodnoty</string>
+    
+    <string name="popisrozdean">Inventúrne rozdiely EAN</string>
+    <string name="popisrozdcis">Inventúrne rozdiely CIS</string>
+    <string name="popisrozdnat">Inventúrne rozdiely názov</string>
+    <string name="popisrozdhod">Inventúrne rozdiely hodnota</string>
+    
+    <string name="popiscsvstav">Export inventúry CSV, XLS</string>
+    <string name="popiscsvrozd">Export inventúrnych rozdielov CSV, XLS</string>
+    <string name="popisprenosstav">Prenos inventúry na FTPServer</string>
+    <string name="popisprenosstavno">Prenos Vzoru na FTPServer</string>
+    
+    <string name="popisbtnpokl">Pokladnica</string>
+    <string name="popisbtnbanka">Banka</string>
+    <string name="popisbtndod1">Dodávatelia</string>
+    <string name="popisbtnodb1">Odberatelia</string>
+    <string name="popisbtndod1k">Dodáv.</string>
+    <string name="popisbtnodb1k">Odber.</string>
+    <string name="kontnextpage">Ďalšia strana</string>
+    <string name="kontprevpage">Predchádzajúca strana</string>
+    <string name="konthladaj">Hľadať</string>
+    <string name="kontvsetky">Všetko</string>
+    <string name="progpokl">Čítam pokladnicu. Prosím čakajte.</string>
+    <string name="preniest">Preniesť dáta na Server</string>
+    
+    <string name="prenosstart"> Prenos štartuje </string>
+    <string name="prenesene"> prenesené </string>
+    <string name="prenoskomplet"> Prenos kompletný </string>
+    <string name="prenosabort"> Prenos prerušený </string>
+    <string name="prenosfail"> Chyba prenosu </string>
+    <string name="ftpserver_title">FTP server</string>
+    <string name="ftpserver_popis">Na prenos inventúry v tvare 82.82.33.21</string>
+    <string name="ftpuser_title">FTP užívateľ</string>
+    <string name="ftpuser_popis">Pre prihlásenie na FTP server.</string>
+    <string name="ftppsw_title">FTP heslo</string>
+    <string name="ftppsw_popis">Pre prihlásenie na FTP server.</string>
+    
+    <string name="skladovepol">Skladové položky</string>
+    <string name="scan">Scan</string>
+    <string name="action_example">Príklad</string>
+    <string name="action_search">Hladať</string>
+    <string name="app_name1">Slider</string>
+    <string name="app_name2">Slider</string>
+    <string name="deleteall">Zmazať celú históriu</string>
+    <string name="deleteallorder">Zmazať všetky vzory</string>
+    <string name="bank">Kat.</string>
+    <string name="desc">Popis</string>
+    <string name="desc_list_item_icon">Popis ikona</string>
+    <string name="drawer_close">Menu zatvorené</string>
+    <string name="deleteallordermes">Chcete zmazať všetky vzory</string>
+    <string name="deleteorder">Zmazať vzory</string>
+    <string name="deleteordermes">Chcete zmazať vzor</string>
+    <string name="drawer_open">Menu otvorené</string>
+    <string name="endorder">Ukonči históriu</string>
+    <string name="navigation_drawer_close">Zatvoriť menu</string>
+    <string name="navigation_drawer_open">Otvoriť menu</string>
+    <string name="popisbtnrefresh">Upraviť</string>
+    <string name="popisbtnobjednaj">do Vzoru</string>
+    <string name="nodeleteallordermes">Nezmazané všetky vzory</string>
+    <string name="nodeleteordermes">Nezmazaný vzor</string>
+    <string name="objednavka">Vzor</string>
+    <string name="objorder">Znovu ulož do vzoru</string>
+    <string name="objordermes">Chcete znovu uložiť do vzoru</string>
+    <string name="okdeleteallordermes">Zmazať všetky vzory</string>
+    <string name="okdeleteordermes">Zmazané vzory</string>
+    <string name="okobjorder">Znovu do vzoru</string>
+    <string name="sent">Poslané</string>
+    <string name="slider">Slider</string>
+    <string name="title_activity_mojeobj">História vzorov</string>
+    <string name="title_activity_mojeobjdetaily">Detail vzoru</string>
+    <string name="title_section1">Sekcia 1</string>
+    <string name="title_section2">Sekcia 2</string>
+    <string name="title_section3">Sekcia 3</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Vstup EAN inventúry</item>
+        <item >Vstup EAN vzorov</item>
+        <item >Výpis inventúry</item>
+        <item >Inventúrne rozdiely</item>
+        <item >Export do CSV</item>
+        <item >Nastavenia</item>
+    </string-array>
+
+
+</resources>

@@ -33,7 +33,6 @@ import android.widget.Button;
 
 import java.io.File;
 
-
 public class MainActivity extends ActionBarActivity {
 
     //First We Declare Titles And Icons For Our Navigation Drawer List View
@@ -185,7 +184,7 @@ public class MainActivity extends ActionBarActivity {
 
         if (id == R.id.preferences) {
 
-            Intent is = new Intent(getApplicationContext(), MyPreferencesActivity.class);
+            Intent is = new Intent(getApplicationContext(), ScrollingActivity.class);
             startActivity(is);
             return true;
         }

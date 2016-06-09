@@ -1,23 +1,5 @@
 package com.eusecom.saminveantory;
  
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-
-import org.json.JSONArray;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -45,6 +27,24 @@ import android.widget.TextView;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import org.json.JSONArray;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
  
 public class InventuraSDActivity extends ListActivity {
  
@@ -52,14 +52,11 @@ public class InventuraSDActivity extends ListActivity {
     private ProgressDialog pDialog;
     private ProgressDialog pDialog2;
     private ProgressDialog pDialog3;
- 
-    // Creating JSON Parser object
-    JSONParser jParser = new JSONParser();
+
     EditText inputAll;
     TextView inputAllServer;
     TextView inputAllUser;
     TextView obsahKosika;
-    TextView mnozstvox;
     TextView popisEan;
     Button btnObjednaj, btnScan;
     //EditText inputNaz;
@@ -71,11 +68,8 @@ public class InventuraSDActivity extends ListActivity {
     
     TextView kosikMnoz;
     TextView kosikSdph;
-    TextView kosikBdph;    
-    TextView kosikIco;
-    TextView kosikOdbm;
+    TextView kosikBdph;
     Button btnPoznamka;
-    Button btnFakturuj;
     Button inputNaz;
     int iean;
     
@@ -99,33 +93,16 @@ public class InventuraSDActivity extends ListActivity {
     static final String NODE_PRICE = "price";
     static final String NODE_EAN = "ean";
     static final String NODE_MER = "mer";
-    static final String NODE_CPL = "cpl";
 
     
     // products JSONArray
     JSONArray products = null;
-    String cat;
-    String pidx;
-    String iconaz;
-    String odbmnaz;
     String pid;
     String ean;
     String nazean;
     String ipx="0";
     String cplx;
-    
-    // XML node names
-    static final String NODE_BANK = "customer";
-    static final String NODE_CSTL = "ico";
-    static final String NODE_NSTL = "nai";
-    static final String NODE_PSCH = "mes";
-    static final String NODE_ODBMS = "odbmx";
-    static final String NODE_ODBM = "odbm";
-    static final String NODE_ONAI = "onai";
-    static final String NODE_OMES = "omes";
-    
     String adresarxx="";
-    public int SCANNER_REQUEST_CODE = 123;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {

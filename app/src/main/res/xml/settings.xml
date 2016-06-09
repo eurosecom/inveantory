@@ -2,59 +2,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/settings" >
 
-
-    <ListPreference
-            android:defaultValue="1"
-            android:entries="@array/sdkarta_names"
-            android:entryValues="@array/sdkarta_values"
-            android:key="sdkarta"
-            android:title="@string/sdkarta_title" />
-
     <EditTextPreference
         android:key="servername"
         android:defaultValue="www.ala.sk/androideshop"
         android:summary="@string/servername_summary"
         android:title="@string/servername_title" />
- 
-    <EditTextPreference
-        android:key="nickname"
-        android:summary="@string/nickname_summary"
-        android:title="@string/nickname_title" /> 
 
-    <EditTextPreference
-        android:key="mojmail"
-        android:summary="@string/mojmail_summary"
-        android:title="@string/mojmail_title" />      
-    
-    <EditTextPreference
-        android:key="userid"
-        android:defaultValue="0"
-        android:summary="@string/userid_summary"
-        android:title="@string/userid_title" />  
- 
-     <EditTextPreference
-        android:key="username"
-        android:summary="@string/username_summary"
-        android:title="@string/username_title" /> 
-    
-    <EditTextPreference
-        android:key="userpsw"
-        android:summary="@string/userpsw_summary"
-        android:title="@string/userpsw_title" />  
-    
-    <EditTextPreference
-        android:key="druhid"
-        android:defaultValue="0"
-        android:enabled="false"
-        android:summary="@string/druhid_summary"
-        android:title="@string/druhid_title" />
-    
-    <EditTextPreference
-        android:key="fir"
-        android:enabled="false"
-        android:summary="@string/fir_summary"
-        android:title="@string/fir_title" />
-    
     <EditTextPreference
         android:key="ftpserver"
         android:summary="@string/ftpserver_popis"
