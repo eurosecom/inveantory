@@ -138,7 +138,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 // Launching All products Activity
-                Intent i = new Intent(getApplicationContext(), InventuraSDActivity.class);
+                Intent i = new Intent(getApplicationContext(), InventuraSDnewActivity.class);
                 startActivity(i);
 
             }
