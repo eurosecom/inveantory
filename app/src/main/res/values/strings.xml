@@ -83,6 +83,8 @@
     <string name="btneanx">inputEAN</string>
     <string name="btnean">Input EAN inventory</string>
     <string name="btneanno">Input EAN patterns</string>
+    <string name="strean">EAN inventory</string>
+    <string name="streanno">EAN patterns</string>
     <string name="zostavyean">List of the inventory</string>
     <string name="rozdielyean">Inventory differences</string>
     <string name="exportcsv1">Export to CSV</string>
@@ -139,7 +141,7 @@
     <string name="popisbtnodb1k">Customer</string>
     <string name="kontnextpage">Next page</string>
     <string name="kontprevpage">Previous page</string>
-    <string name="konthladaj">Seeking</string>
+    <string name="konthladaj">Seeking pattern</string>
     <string name="kontvsetky">All</string>
     <string name="progpokl">Loading a cash register. Please wait.</string>
     <string name="preniest">Transfer the data to the server</string>
@@ -300,5 +302,9 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <string name="asktxt">Ask:</string>
+    <string name="bidtxt">Bid:</string>
+    <string name="changetxt">Change:</string>
 
 </resources>

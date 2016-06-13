@@ -75,6 +75,8 @@
     <string name="btneanx">vstupEAN</string>
     <string name="btnean">Vstup EAN inventúry</string>
     <string name="btneanno">Vstup EAN vzorov</string>
+    <string name="strean">EAN inventúra</string>
+    <string name="streanno">EAN vzory</string>
     <string name="zostavyean">Stav zásob</string>
     <string name="rozdielyean">Inventúrne rozdiely</string>
     <string name="exportcsv1">Export do CSV</string>
@@ -131,7 +133,7 @@
     <string name="popisbtnodb1k">Odber.</string>
     <string name="kontnextpage">Ďalšia strana</string>
     <string name="kontprevpage">Predchádzajúca strana</string>
-    <string name="konthladaj">Hľadať</string>
+    <string name="konthladaj">Hľadať vzor</string>
     <string name="kontvsetky">Všetko</string>
     <string name="progpokl">Čítam pokladnicu. Prosím čakajte.</string>
     <string name="preniest">Preniesť dáta na Server</string>

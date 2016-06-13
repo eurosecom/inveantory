@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.eusecom.saminveantory.InventuraSDnewActivity"
-    tools:showIn="@layout/activity_scrolling">
+    tools:showIn="@layout/invsd_activity_scrolling">
 
-    <include layout="@layout/inventura" />
+    <include layout="@layout/invsd_inventura" />
 
 
 
