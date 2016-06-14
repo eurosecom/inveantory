@@ -184,7 +184,7 @@ public class MainActivity extends ActionBarActivity {
 
         if (id == R.id.preferences) {
 
-            Intent is = new Intent(getApplicationContext(), ScrollingActivity.class);
+            Intent is = new Intent(getApplicationContext(), MyPreferencesActivity.class);
             startActivity(is);
             return true;
         }

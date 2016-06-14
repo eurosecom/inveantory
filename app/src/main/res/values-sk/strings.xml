@@ -197,5 +197,10 @@
         <item >Nastavenia</item>
     </string-array>
 
+    <string name="mnotxt">Množstvo:</string>
+    <string name="pricetxt">Cena:</string>
+    <string name="idtxt">ID:</string>
+    <string name="itemtxt">položka</string>
+
 
 </resources>

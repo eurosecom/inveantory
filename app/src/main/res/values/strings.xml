@@ -303,8 +303,10 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
-    <string name="asktxt">Ask:</string>
-    <string name="bidtxt">Bid:</string>
-    <string name="changetxt">Change:</string>
+    <string name="mnotxt">Quantity:</string>
+    <string name="pricetxt">Price:</string>
+    <string name="idtxt">ID:</string>
+    <string name="itemtxt">item</string>
+
 
 </resources>

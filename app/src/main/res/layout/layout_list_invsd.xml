@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="120dp"
+    android:layout_height="100dp"
     android:background="@drawable/border_listfavorite"
     >
      
      <!-- icon -->
      <ImageView
          android:id="@+id/image"
-         android:layout_width="64dp"
-         android:layout_height="64dp"
+         android:layout_width="50dp"
+         android:layout_height="50dp"
          android:layout_alignParentLeft="true"
          android:layout_marginLeft="8dp"
          android:layout_marginRight="8dp"
@@ -26,21 +26,21 @@
          android:layout_height="wrap_content"
          android:layout_toRightOf="@+id/image"
          android:layout_alignBaseline="@+id/image"
-         android:textColor="@android:color/darker_gray"
+         android:textColor="@android:color/black"
          android:layout_marginLeft="8dp"
          android:layout_marginRight="8dp"
          android:layout_marginTop="8dp"
-         android:textSize="22sp" />
+         android:textSize="18sp" />
     
     <TextView
-        android:id="@+id/asktxt"
-        android:text="@string/asktxt"
+        android:id="@+id/mnotxt"
+        android:text="@string/mnotxt"
         android:singleLine="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/image"
         android:layout_below="@+id/image"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/darker_gray"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -48,11 +48,11 @@
         android:textSize="18sp" />
     
     <TextView
-        android:id="@+id/askprice"
+        android:id="@+id/mnovalue"
         android:singleLine="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/asktxt"
+        android:layout_toRightOf="@+id/mnotxt"
         android:layout_below="@+id/image"
         android:textColor="@android:color/black"
         android:layout_marginLeft="8dp"
@@ -62,12 +62,55 @@
         android:textSize="17sp" />
     
     <TextView
-        android:id="@+id/bidtxt"
-        android:text="@string/bidtxt"
+        android:id="@+id/pricetxt"
+        android:text="@string/pricetxt"
         android:singleLine="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/askprice"
+        android:layout_toRightOf="@+id/mnovalue"
+        android:layout_below="@+id/image"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="1dp"
+        android:textSize="17sp" />
+    
+    <TextView
+        android:id="@+id/pricevalue"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/pricetxt"
+        android:layout_below="@+id/image"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="1dp"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/idtxt"
+        android:text="@string/idtxt"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/pricevalue"
+        android:layout_below="@+id/image"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="1dp"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/idx"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/idtxt"
         android:layout_below="@+id/image"
         android:textColor="@android:color/black"
         android:layout_marginLeft="8dp"
@@ -76,47 +119,6 @@
         android:layout_marginBottom="1dp"
         android:textSize="17sp" />
     
-    <TextView
-        android:id="@+id/bidprice"
-        android:singleLine="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/bidtxt"
-        android:layout_below="@+id/image"
-        android:textColor="@android:color/black"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="1dp"
-        android:textSize="17sp" />
-    
-    <TextView
-        android:id="@+id/changetxt"
-        android:text="@string/changetxt"
-        android:singleLine="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/bidprice"
-        android:layout_below="@+id/image"
-        android:textColor="@android:color/black"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="1dp"
-        android:textSize="17sp" />
-    
-    <TextView
-        android:id="@+id/profit"
-        android:singleLine="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/changetxt"
-        android:layout_below="@+id/image"
-        android:textColor="@android:color/black"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="1dp"
-        android:textSize="17sp" />
+
  
 </RelativeLayout>

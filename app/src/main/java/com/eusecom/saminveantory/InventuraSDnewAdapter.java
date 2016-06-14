@@ -2,17 +2,12 @@ package com.eusecom.saminveantory;
 
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -25,19 +20,27 @@ import java.util.List;
 public class InventuraSDnewAdapter extends RecyclerView.Adapter<InventuraSDnewAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<String> mDataSet;
-    private List<String> mAskPrice;
-    private List<String> mBidPrice;
-    private List<String> mProfit;
+    private List<String> mText;
+    private List<String> mMnovalue;
+    private List<String> mPricevalue;
+    private List<String> mIdx;
 
-    public InventuraSDnewAdapter(Context context, List<String> dataSet, List<String> askPrice,
-    		List<String> bidPrice, List<String> Profit) {
+    interface DoSomething2 {
+
+        void doChangeItem(String itemx);
+    }
+
+    DoSomething2 myDoSomething2CallBack;
+
+    public InventuraSDnewAdapter(DoSomething2 callback, Context context, List<String> Text, List<String> Mnovalue,
+    		List<String> Pricevalue, List<String> Idx) {
     	
         mContext = context;
-        mDataSet = dataSet;
-        mAskPrice = askPrice;
-        mBidPrice = bidPrice;
-        mProfit = Profit;
+        mText = Text;
+        mMnovalue = Mnovalue;
+        mPricevalue = Pricevalue;
+        mIdx = Idx;
+        myDoSomething2CallBack = callback;
     }
 
     @Override
@@ -52,73 +55,58 @@ public class InventuraSDnewAdapter extends RecyclerView.Adapter<InventuraSDnewAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Picasso.with(mContext).load(R.drawable.add2new).into(holder.image);
-        holder.text.setText(mDataSet.get(position));
-        holder.askprice.setText(mAskPrice.get(position));
-        holder.bidprice.setText(mBidPrice.get(position));
-        holder.profit.setText(mProfit.get(position));
+        holder.text.setText(mText.get(position));
+        holder.mnovalue.setText(mMnovalue.get(position));
+        holder.pricevalue.setText(mPricevalue.get(position));
+        holder.idx.setText(mIdx.get(position));
         
         holder.setClickListener(new InventuraSDnewAdapter.ViewHolder.ClickListener() {
             public void onClick(View v, int pos, boolean isLongClick) {
                 if (isLongClick) {
-         
-                    // View v at position pos is long-clicked.
-                	String poslx = pos + "";
-                	String menax = mDataSet.get(pos);
-                	Toast.makeText(mContext, "longclick pos. " + poslx + " pair " + menax, Toast.LENGTH_SHORT).show();
+
+                    String poslx = pos + "";
+                    String cplx = mIdx.get(pos);
+                    //Toast.makeText(mContext, "longclick pos. " + poslx + " idx " + cplx, Toast.LENGTH_SHORT).show();
+                    //toggleSelection(pos);
+
+                    //Intent i = new Intent(mContext, ZmazInventuraSDActivity.class);
+                    //Bundle extras = new Bundle();
+                    //extras.putString("cat", cplx);
+                    //extras.putString("odk", "0");
+                    //i.putExtras(extras);
+                    //v.getContext().startActivity(i);
+                    myDoSomething2CallBack.doChangeItem(cplx);
+                    v.showContextMenu();
+
+
                 	
                 } else {
-                    // View v at position pos is clicked.
-                	//String possx = pos + "";
-                	String poslx = pos + "";
-                	String mena2 = mDataSet.get(pos);
-                	Toast.makeText(mContext, "shortclick pos. " + poslx + " pair " + mena2, Toast.LENGTH_SHORT).show();
-                	//toggleSelection(pos);
-                	
-                	Intent i = new Intent(mContext, InventuraSDnewActivity.class);
-                	Bundle extras = new Bundle();
-                    extras.putString("pairx", mena2);
-                    extras.putInt("whatspage", 0);
-                    i.putExtras(extras);
-                    v.getContext().startActivity(i);
-                    //use localbroadcast or interface for finish activity and asynctask
-                    //mActivity.finish(); don't work if i send activity to adapter
-                    
-                    sendValueToFavAct("A", 1);
 
-                    
+                    String poslx = pos + "";
+                    String cplx = mIdx.get(pos);
+                    //Toast.makeText(mContext, "shortclick pos. " + poslx + " idx " + cplx, Toast.LENGTH_SHORT).show();
+                    myDoSomething2CallBack.doChangeItem(cplx);
+                    v.showContextMenu();
+
                 }
             }
         });
         
     }
-    
-    //sending values from fragment to activity
-  	protected void sendValueToFavAct(String value, int xxsp) {
-          // it has to be the same name as in the fragment
-          Intent intent = new Intent("com.eusecom.exforu.action.UI_FINISH_FAVACT");
-          Bundle dataBundle = new Bundle();
-          dataBundle.putInt("UI_XXSP", xxsp);
-          dataBundle.putString("UI_VALUE", value);
-          intent.putExtras(dataBundle);
-          
-          Log.d("FavoriteAdapter", "I am at sendValueToFavAct.");
-          LocalBroadcastManager.getInstance(mContext).sendBroadcast(intent);
-          
-        
-      }
+
 
     @Override
     public int getItemCount() {
-        return mDataSet.size();
+        return mText.size();
     }
 
     public void remove(int position) {
-        mDataSet.remove(position);
+        mText.remove(position);
         notifyItemRemoved(position);
     }
 
     public void add(String text, int position) {
-        mDataSet.add(position, text);
+        mText.add(position, text);
         notifyItemInserted(position);
     }
 
@@ -126,18 +114,18 @@ public class InventuraSDnewAdapter extends RecyclerView.Adapter<InventuraSDnewAd
 
         public ImageView image;
         public TextView text;
-        public TextView askprice;
-        public TextView bidprice;
-        public TextView profit;
+        public TextView mnovalue;
+        public TextView pricevalue;
+        public TextView idx;
         private ClickListener clickListener;
 
         public ViewHolder(View itemView) {
             super(itemView);
             image = (ImageView) itemView.findViewById(R.id.image);
             text = (TextView) itemView.findViewById(R.id.text);
-            askprice = (TextView) itemView.findViewById(R.id.askprice);
-            bidprice = (TextView) itemView.findViewById(R.id.bidprice);
-            profit = (TextView) itemView.findViewById(R.id.profit);
+            pricevalue = (TextView) itemView.findViewById(R.id.pricevalue);
+            mnovalue = (TextView) itemView.findViewById(R.id.mnovalue);
+            idx = (TextView) itemView.findViewById(R.id.idx);
             
             // We set listeners to the whole item view, but we could also
             // specify listeners for the title or the icon.

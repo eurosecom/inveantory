@@ -1,11 +1,5 @@
 package com.eusecom.saminveantory;
  
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -13,7 +7,13 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.widget.TextView;
-import android.os.StrictMode;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
  
 public class ZmazInventuraSDActivity extends Activity {
  
@@ -80,10 +80,6 @@ public class ZmazInventuraSDActivity extends Activity {
     			adresarxx=serverxxx[1];
     		}
 
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-        .permitAll().build();
-        StrictMode.setThreadPolicy(policy);
         
 
         new DeleteProduct().execute();
@@ -183,7 +179,7 @@ public class ZmazInventuraSDActivity extends Activity {
 
 
                 if( odkx.equals("0")) {
-                Intent i = new Intent(getApplicationContext(), InventuraSDActivity.class);
+                Intent i = new Intent(getApplicationContext(), InventuraSDnewActivity.class);
                 startActivity(i);
                 }
                 if( odkx.equals("1")) {
