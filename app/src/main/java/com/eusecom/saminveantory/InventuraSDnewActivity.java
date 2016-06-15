@@ -262,7 +262,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_scrolling, menu);
+        getMenuInflater().inflate(R.menu.options_invsd, menu);
         return true;
     }
 
@@ -273,8 +273,41 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.preferences) {
+
+            Intent is = new Intent(getApplicationContext(), MyPreferencesActivity.class);
+            startActivity(is);
+            return true;
+        }
+
+        if (id == R.id.setnostroreinventory) {
+
+            Intent idm = new Intent(getApplicationContext(), InvsetActivity.class);
+            Bundle extrasdm = new Bundle();
+            extrasdm.putString("page", "3");
+            idm.putExtras(extrasdm);
+            startActivity(idm);
+            return true;
+        }
+
+        if (id == R.id.delinventory) {
+
+            Intent idm = new Intent(getApplicationContext(), InvsetActivity.class);
+            Bundle extrasdm = new Bundle();
+            extrasdm.putString("page", "0");
+            idm.putExtras(extrasdm);
+            startActivity(idm);
+            return true;
+        }
+
+
+        if (id == R.id.demoresources) {
+
+            Intent idm = new Intent(getApplicationContext(), InvsetActivity.class);
+            Bundle extrasdm = new Bundle();
+            extrasdm.putString("page", "1");
+            idm.putExtras(extrasdm);
+            startActivity(idm);
             return true;
         }
         return super.onOptionsItemSelected(item);

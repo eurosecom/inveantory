@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mycompany.autogradha.ScrollingActivity">
+
+    <item
+        android:id="@+id/setnostroreinventory"
+        android:title="@string/setnostoreinventory">
+    </item>
+
+    <item
+        android:id="@+id/delinventory"
+        android:title="@string/delinventory">
+    </item>
+
+    <item
+        android:id="@+id/demoresources"
+        android:title="@string/demoresources">
+    </item>
+    <item
+        android:id="@+id/preferences"
+        android:title="@string/settings">
+    </item>
+</menu>
