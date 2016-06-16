@@ -34,6 +34,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
@@ -107,6 +108,18 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             adresarxx="androideshop";
         }else{
             adresarxx=serverxxx[1];
+        }
+
+        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String fileName = "/eusecom/" + adresarxx + "/inventura.csv";
+        File myFile = new File(baseDir + File.separator + fileName);
+
+        if(!myFile.exists()) {
+            try {
+                myFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         inputNaz = (Button) findViewById(R.id.inputNaz);
@@ -297,6 +310,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             extrasdm.putString("page", "0");
             idm.putExtras(extrasdm);
             startActivity(idm);
+            finish();
             return true;
         }
 
