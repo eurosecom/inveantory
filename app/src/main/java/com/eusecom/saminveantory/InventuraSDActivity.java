@@ -230,8 +230,9 @@ public class InventuraSDActivity extends ListActivity {
             @Override
             public void onClick(View arg0) {
 
-            	Intent ih = new Intent(getApplicationContext(), HladajActivity.class);
-            	startActivityForResult(ih, 100);
+            	Intent ih = new Intent(getApplicationContext(), SearchRvActivity.class);
+            	//startActivityForResult(ih, 100);
+                startActivity(ih);
             	
             }
         });

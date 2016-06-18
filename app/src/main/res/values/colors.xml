@@ -17,6 +17,8 @@
 <!-- Colors specific to Material themes. 
      Taken from: sdk/platforms/android-L/data/res/values/colors_material.xml -->
 <resources>
+
+    <color name="fragment_bg">#e5e5e5</color>
     <color name="background_material_dark">#ff212121</color>
     <color name="background_material_light">#fffafafa</color>
 
