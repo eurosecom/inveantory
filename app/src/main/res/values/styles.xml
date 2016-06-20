@@ -2,10 +2,15 @@
         <!-- Base application theme.-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <!-- customize the color palette -->
+        <!-- customize the color palette
         <item name="colorPrimary">@color/material_blue_100</item>
         <item name="colorPrimaryDark">@color/material_blue_300</item>
         <item name="colorAccent">@color/material_red_A200</item>
+        -->
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
 
         <item name="windowActionBar">false</item>
         <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowStyle</item>
@@ -13,11 +18,14 @@
 
     <style name="AppTheme.DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
-        <item name="color">@android:color/black</item>
+        <!-- white hamburger icon for drawer  -->
+        <item name="color">@android:color/white</item>
     </style>
 
+    <!-- dark actionbar with white text -->
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <!-- white optionsmenu with black text -->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 

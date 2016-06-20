@@ -30,7 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_width="200dp"
             android:layout_marginTop="15dp"
-			android:background="@color/button_material_light"
             android:layout_centerHorizontal="true"
 			android:text="@string/btnean"/>
 
@@ -38,7 +37,6 @@
 			android:layout_height="wrap_content"
 			android:layout_width="200dp"
 			android:layout_marginTop="15dp"
-			android:background="@color/button_material_light"
 			android:layout_centerHorizontal="true"
 			android:layout_below="@+id/btnEan"
 			android:text="@string/btneanno"/>

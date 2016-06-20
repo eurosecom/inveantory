@@ -47,9 +47,9 @@ public class SearchRvActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new TabOneFragment(), "One");
-        adapter.addFragment(new TabTwoFragment(), "Two");
-        adapter.addFragment(new TabThreeFragment(), "Three");
+        adapter.addFragment(new TabOneFragment(), getResources().getString(R.string.popisean));
+        adapter.addFragment(new TabTwoFragment(), getResources().getString(R.string.popiseditname));
+        adapter.addFragment(new TabThreeFragment(), getResources().getString(R.string.popiscis));
         viewPager.setAdapter(adapter);
 
     }
