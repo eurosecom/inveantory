@@ -1,9 +1,13 @@
 package com.eusecom.saminveantory.TabFragments;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.eusecom.saminveantory.R;
 
@@ -13,13 +17,13 @@ import java.util.List;
 public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     private List<CountryModel> mCountryModel;
+    private Context mContext;
 //    private List<CountryModel> mOriginalCountryModel;
 
-    public RVAdapter(List<CountryModel> countryModel) {
+    public RVAdapter(Context context, List<CountryModel> countryModel) {
         mCountryModel = new ArrayList<>(countryModel);
-//        mOriginalCountryModel = new ArrayList<>(countryModel);
-        //  this.mCountryModel = mCountryModel;
-        //   this.mOriginalCountryModel = mCountryModel;
+        mContext = context;
+
     }
 
     @Override
@@ -28,11 +32,35 @@ public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 //        holder.bind(model);
         final CountryModel model = mCountryModel.get(i);
         itemViewHolder.bind(model);
+
+
+        itemViewHolder.setClickListener(new ItemViewHolder.ClickListener() {
+            public void onClick(View v, int pos, boolean isLongClick) {
+                if (isLongClick) {
+
+
+
+
+                } else {
+
+                    String poslx = pos + "";
+                    Log.d("poslx ", poslx);
+
+                    TextView nameclick = (TextView) v.findViewById(R.id.country_name);
+                    String poslname=nameclick.getText().toString();
+                    Log.d("posl name ", poslname);
+
+                    Toast.makeText(mContext, "longclick pos. name " + poslname, Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+
     }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_row, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_rowsearchrv, viewGroup, false);
         return new ItemViewHolder(view);
     }
 
@@ -97,7 +125,6 @@ public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder> {
         notifyItemMoved(fromPosition, toPosition);
     }
 
-//    public void flushFilter(List<CountryModel> models) {
-//        animateTo(models);
-//    }
+
+
 }
