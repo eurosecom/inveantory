@@ -1,5 +1,6 @@
 package com.eusecom.saminveantory.TabFragments;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -40,6 +41,27 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
     static final String NODE_NAME = "name";
     static final String NODE_PID = "pid";
 
+    OnHeadlineSelectedListener mCallback;
+
+    // Container Activity must implement this interface
+    public interface OnHeadlineSelectedListener {
+        public void onArticleSelected(int position);
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            mCallback = (OnHeadlineSelectedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +100,7 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
 
 
     }
+
 
 
     @Override
@@ -212,6 +235,7 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
 
                     adapter = new RVAdapter(getActivity(), mCountryModel);
                     recyclerview.setAdapter(adapter);
+                    mCallback.onArticleSelected(11);
 
                 }
             });
