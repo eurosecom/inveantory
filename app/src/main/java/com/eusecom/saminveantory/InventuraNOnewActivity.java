@@ -2,16 +2,16 @@ package com.eusecom.saminveantory;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -46,10 +46,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-public class InventuraSDnewActivity extends AppCompatActivity implements DoSomething2 {
+public class InventuraNOnewActivity extends AppCompatActivity implements DoSomething2 {
 
-    EditText inputMno, inputEan, inputAll, inputCis, inputCed, inputMer;
-    Button btnObjednaj, btnPoznamka, inputNaz;
+    EditText inputMno, inputEan, inputAll, inputCis, inputCed, inputMer, inputNaz;
+    Button btnObjednaj, btnPoznamka;
     TextView inputAllServer, popisEan;
 
     private ProgressDialog pDialog;
@@ -86,16 +86,23 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
 
     int iean;
 
+    String nostnum, nostname, nostprice, nostvol, nostmer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.invsd_activity_scrolling);
+        setContentView(R.layout.invno_activity_scrolling);
 
         View bf = findViewById(R.id.btnFakturuj);
         bf.setVisibility(View.GONE);
         View bs  = findViewById(R.id.btnScan);
         bs.setVisibility(View.INVISIBLE);
 
+        inputNaz = (EditText) findViewById(R.id.inputNaz);
+        inputMno = (EditText) findViewById(R.id.inputMno);
+        inputCis = (EditText) findViewById(R.id.inputCis);
+        inputCed = (EditText) findViewById(R.id.inputCed);
+        inputMer = (EditText) findViewById(R.id.inputMer);
         inputEan = (EditText) findViewById(R.id.inputEan);
 
         inputAllServer = (TextView) findViewById(R.id.inputAllServer);
@@ -110,8 +117,15 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             adresarxx=serverxxx[1];
         }
 
+        nostnum = SettingsActivity.getNostnum(this);
+        nostname = SettingsActivity.getNostname(this);
+        nostprice = SettingsActivity.getNostprice(this);
+        nostvol = SettingsActivity.getNostvol(this);
+        nostmer = SettingsActivity.getNostmer(this);
+
+
         String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String fileName = "/eusecom/" + adresarxx + "/inventura.csv";
+        String fileName = "/eusecom/" + adresarxx + "/inventura_nostore.csv";
         File myFile = new File(baseDir + File.separator + fileName);
 
         if(!myFile.exists()) {
@@ -122,14 +136,6 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             }
         }
 
-        inputNaz = (Button) findViewById(R.id.inputNaz);
-        inputMno = (EditText) findViewById(R.id.inputMno);
-        inputCis = (EditText) findViewById(R.id.inputCis);
-        inputCed = (EditText) findViewById(R.id.inputCed);
-        inputMer = (EditText) findViewById(R.id.inputMer);
-        inputCed.setEnabled(false);
-        inputCis.setEnabled(false);
-        inputMer.setEnabled(false);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -141,7 +147,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
 
-                IntentIntegrator integrator = new IntentIntegrator(InventuraSDnewActivity.this);
+                IntentIntegrator integrator = new IntentIntegrator(InventuraNOnewActivity.this);
                 integrator.initiateScan();
             }
         });
@@ -150,12 +156,14 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
         productsList = new ArrayList<HashMap<String, String>>();
 
         // Loading products in Background Thread
-        new LoadAllSDProducts().execute();
+        new LoadAllNOProducts().execute();
 
         recyclerView = (RecyclerView) findViewById(R.id.list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         btnObjednaj = (Button) findViewById(R.id.btnObjednaj);
+
+        // save button click event
         btnObjednaj.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -171,13 +179,15 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
                 if( cis.equals("0")) { ulozok="0"; }
                 if( cis.equals("")) { ulozok="0"; }
 
-                if( ulozok.equals("1")) { new SaveSDProductDetails().execute(); }
+                if( ulozok.equals("1")) { new SaveNOProductDetails().execute(); }
 
 
             }
         });
 
         btnPoznamka = (Button) findViewById(R.id.btnPoznamka);
+
+        // poznamka button click event
         btnPoznamka.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -189,18 +199,6 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             }
         });
 
-
-        inputNaz.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                inputEan.requestFocus();
-                Intent ih = new Intent(getApplicationContext(), SearchRvActivity.class);
-                startActivityForResult(ih, 100);
-
-            }
-        });
 
         inputMno = (EditText) findViewById(R.id.inputMno);
         inputMno.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -216,7 +214,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
                     if( ean.equals("")) { dajdetail="0"; }
                     if( ean.equals(" ")) { dajdetail="0"; }
 
-                    if( dajdetail.equals("1")) { new GetSDProductDetails().execute(); }
+                    if( dajdetail.equals("1")) {  }
 
 
 
@@ -225,50 +223,12 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             }
         });
 
-        inputEan = (EditText) findViewById(R.id.inputEan);
-        inputEan.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
 
-                    inputCis = (EditText) findViewById(R.id.inputCis);
-                    inputCis.setText("0");
-                    inputMno = (EditText) findViewById(R.id.inputMno);
-                    inputMno.setText("");
-                    iean=0;
-
-                }
-
-            }
-        });
-
-
-
-        inputEan.addTextChangedListener(new TextWatcher() {
-
-            public void afterTextChanged(Editable s) {
-
-                inputMno = (EditText) findViewById(R.id.inputMno);
-                iean=iean + 1;
-
-                String ss = s.toString();
-
-                iean=ss.length();
-
-                int position = iean;
-                String poss = position + "";
-                inputMno.setText(poss);
-                if( position == 13 ){ inputMno.requestFocus(); }
-            }
-
-            public void beforeTextChanged(CharSequence s, int start,
-                                          int count, int after) {
-            }
-
-            public void onTextChanged(CharSequence s, int start,
-                                      int before, int count) {
-            }
-        });
-
+        inputCis.setText(nostnum);
+        inputNaz.setText(nostname);
+        inputMno.setText(nostvol);
+        inputCed.setText(nostprice);
+        inputMer.setText(nostmer);
 
 
     }//end oncreate
@@ -276,7 +236,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.options_invsd, menu);
+        getMenuInflater().inflate(R.menu.options_invno, menu);
         return true;
     }
 
@@ -294,21 +254,19 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             return true;
         }
 
-        if (id == R.id.setnostroreinventory) {
+        if (id == R.id.mojeobj) {
 
-            Intent idm = new Intent(getApplicationContext(), InvsetActivity.class);
-            Bundle extrasdm = new Bundle();
-            extrasdm.putString("page", "3");
-            idm.putExtras(extrasdm);
-            startActivity(idm);
+            Intent is = new Intent(getApplicationContext(), VladciSDActivity.class);
+            startActivity(is);
+            finish();
             return true;
         }
 
-        if (id == R.id.delinventory) {
+        if (id == R.id.delinventory_nostore) {
 
             Intent idm = new Intent(getApplicationContext(), InvsetActivity.class);
             Bundle extrasdm = new Bundle();
-            extrasdm.putString("page", "0");
+            extrasdm.putString("page", "2");
             idm.putExtras(extrasdm);
             startActivity(idm);
             finish();
@@ -316,15 +274,6 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
         }
 
 
-        if (id == R.id.demoresources) {
-
-            Intent idm = new Intent(getApplicationContext(), InvsetActivity.class);
-            Bundle extrasdm = new Bundle();
-            extrasdm.putString("page", "1");
-            idm.putExtras(extrasdm);
-            startActivity(idm);
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -355,7 +304,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
     }//end onactivityresult
 
 
-    class LoadAllSDProducts extends AsyncTask<String, String, String> {
+    class LoadAllNOProducts extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -363,7 +312,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(InventuraSDnewActivity.this);
+            pDialog = new ProgressDialog(InventuraNOnewActivity.this);
             pDialog.setMessage(getString(R.string.progallproducts));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
@@ -379,7 +328,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             try {
 
                 String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-                String fileName = "/eusecom/" + adresarxx + "/inventura.csv";
+                String fileName = "/eusecom/" + adresarxx + "/inventura_nostore.csv";
                 File myFile = new File(baseDir + File.separator + fileName);
 
                 FileInputStream fIn = new FileInputStream(myFile);
@@ -491,7 +440,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
                     //Log.d("mDataSet", mDataSet.toString());
                     //Log.d("myBidList", myBidList.toString());
 
-                    adapter = new InventuraSDnewAdapter(InventuraSDnewActivity.this, InventuraSDnewActivity.this, mText, mMno, mPrice, mIdx);
+                    adapter = new InventuraSDnewAdapter(InventuraNOnewActivity.this, InventuraNOnewActivity.this, mText, mMno, mPrice, mIdx);
                     recyclerView.setAdapter(adapter);
                     registerForContextMenu(recyclerView);
 
@@ -525,7 +474,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog2 = new ProgressDialog(InventuraSDnewActivity.this);
+            pDialog2 = new ProgressDialog(InventuraNOnewActivity.this);
             pDialog2.setMessage(getString(R.string.progallproducts));
             pDialog2.setIndeterminate(false);
             pDialog2.setCancelable(true);
@@ -545,7 +494,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
                     inputEan = (EditText) findViewById(R.id.inputEan);
                     ean = inputEan.getText().toString();
 
-                    inputNaz = (Button) findViewById(R.id.inputNaz);
+                    inputNaz = (EditText) findViewById(R.id.inputNaz);
                     inputMno = (EditText) findViewById(R.id.inputMno);
                     inputCis = (EditText) findViewById(R.id.inputCis);
                     inputCed = (EditText) findViewById(R.id.inputCed);
@@ -712,7 +661,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
         return encoding;
     }//end getInputEncoding
 
-    class SaveSDProductDetails extends AsyncTask<String, String, String> {
+    class SaveNOProductDetails extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -720,7 +669,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog3 = new ProgressDialog(InventuraSDnewActivity.this);
+            pDialog3 = new ProgressDialog(InventuraNOnewActivity.this);
             pDialog3.setMessage(getString(R.string.progsavproduct));
             pDialog3.setIndeterminate(false);
             pDialog3.setCancelable(true);
@@ -745,7 +694,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             try {
 
                 String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-                String fileName = "/eusecom/" + adresarxx + "/inventura.csv";
+                String fileName = "/eusecom/" + adresarxx + "/inventura_nostore.csv";
 
                 File myFile = new File(baseDir + File.separator + fileName);
 
@@ -780,9 +729,17 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
                 myOutWriter.close();
                 fOut.close();
 
+                int numi = Integer.parseInt(nostnum);
+                numi = numi + 1;
+                String nums = numi + "";
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                SharedPreferences.Editor editor = prefs.edit();
 
+                editor.putString("nostnum", nums).apply();
 
-                Intent i = new Intent(getApplicationContext(), InventuraSDnewActivity.class);
+                editor.commit();
+
+                Intent i = new Intent(getApplicationContext(), InventuraNOnewActivity.class);
                 startActivity(i);
                 finish();
 
@@ -832,7 +789,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
 
             case R.id.delete:
 
-                Intent i = new Intent(getApplicationContext(), ZmazInventuraSDActivity.class);
+                Intent i = new Intent(getApplicationContext(), ZmazInventuraNOActivity.class);
                 Bundle extras = new Bundle();
                 extras.putString("cat", senditem);
                 extras.putString("odk", "0");

@@ -1,6 +1,8 @@
 package com.eusecom.saminveantory.TabFragments;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,12 +20,13 @@ public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     private List<CountryModel> mCountryModel;
     private Context mContext;
+    private Activity mActivity;
 //    private List<CountryModel> mOriginalCountryModel;
 
-    public RVAdapter(Context context, List<CountryModel> countryModel) {
+    public RVAdapter(Activity activity, Context context, List<CountryModel> countryModel) {
         mCountryModel = new ArrayList<>(countryModel);
         mContext = context;
-
+        mActivity = activity;
     }
 
     @Override
@@ -50,7 +53,15 @@ public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder> {
                     String poslname=nameclick.getText().toString();
                     Log.d("posl name ", poslname);
 
-                    Toast.makeText(mContext, "longclick pos. name " + poslname, Toast.LENGTH_SHORT).show();
+                    TextView isoclick= (TextView) v.findViewById(R.id.country_iso);
+                    String poslean=isoclick.getText().toString();
+
+                    Toast.makeText(mContext, "longclick pos. name " + poslname + " " + poslean, Toast.LENGTH_SHORT).show();
+
+                    Intent i = new Intent();
+                    i.putExtra("pidx", poslean);
+                    mActivity.setResult(101, i);
+                    mActivity.finish();
 
                 }
             }

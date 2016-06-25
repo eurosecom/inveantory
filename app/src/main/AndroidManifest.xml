@@ -26,6 +26,7 @@
         <activity android:name="com.eusecom.saminveantory.InventuraSDActivity" android:label="@string/inventura"> </activity>
         <activity android:name="com.eusecom.saminveantory.InventuraNOActivity" android:label="@string/inventura"> </activity>
         <activity android:name="com.eusecom.saminveantory.InventuraSDnewActivity" android:label="@string/strean"> </activity>
+        <activity android:name="com.eusecom.saminveantory.InventuraNOnewActivity" android:label="@string/streanno"> </activity>
         <activity android:name="com.eusecom.saminveantory.SearchRvActivity" android:label="@string/inventura"> </activity>
         <activity
             android:name="com.eusecom.saminveantory.ZmazInventuraSDActivity"

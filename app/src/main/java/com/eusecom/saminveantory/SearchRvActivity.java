@@ -6,10 +6,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.eusecom.saminveantory.TabFragments.TabOneFragment;
 import com.eusecom.saminveantory.TabFragments.TabThreeFragment;
@@ -48,20 +44,6 @@ public class SearchRvActivity extends AppCompatActivity implements TabOneFragmen
         tabLayout.setupWithViewPager(viewPager);
 
 
-        Button btnEan = (Button) findViewById(R.id.btnEan);
-        btnEan.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "clicked ", Toast.LENGTH_SHORT).show();
-                tabLayout.removeAllTabs();
-                tabLayout.addTab(tabLayout.newTab().setTag(0).setText("new Tab 1"));
-                tabLayout.addTab(tabLayout.newTab().setTag(1).setText("new Tab 2"));
-                tabLayout.addTab(tabLayout.newTab().setTag(1).setText("new Tab 3"));
-
-            }
-        });
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -77,8 +59,8 @@ public class SearchRvActivity extends AppCompatActivity implements TabOneFragmen
     public void onArticleSelected(int position) {
         // The user selected the headline of an article from the HeadlinesFragment
         // Do something here to display that article
-        Log.d("I am at  ", "onArticleSelected");
-        Toast.makeText(getApplicationContext(), "I am at onArticleSelected", Toast.LENGTH_SHORT).show();
+        //Log.d("I am at  ", "onArticleSelected");
+        //Toast.makeText(getApplicationContext(), "I am at onArticleSelected", Toast.LENGTH_SHORT).show();
 
         String poss = position + "";
         tabLayout.removeAllTabs();

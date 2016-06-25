@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.eusecom.saminveantory.R;
+import com.eusecom.saminveantory.SettingsActivity;
 import com.eusecom.saminveantory.XMLDOMParser;
 
 import org.w3c.dom.Document;
@@ -40,6 +41,7 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
     static final String NODE_EAN = "ean";
     static final String NODE_NAME = "name";
     static final String NODE_PID = "pid";
+    String adresarxx="";
 
     OnHeadlineSelectedListener mCallback;
 
@@ -94,6 +96,15 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
         //    mCountryModel.add(new CountryModel(obj.getDisplayCountry(), obj.getISO3Country()));
         //}
 
+
+        String serverx = SettingsActivity.getServerName(getActivity());
+        String delims3 = "[/]+";
+        String[] serverxxx = serverx.split(delims3);
+        if (serverxxx.length < 2 ) {
+            adresarxx="androideshop";
+        }else{
+            adresarxx=serverxxx[1];
+        }
 
         // Loading products in Background Thread
         new LoadAllProducts().execute();
@@ -154,6 +165,8 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
                 filteredModelList.add(model);
             }
         }
+        int pocx = filteredModelList.size();
+        mCallback.onArticleSelected(pocx);
         return filteredModelList;
     }
 
@@ -187,7 +200,7 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
             try {
 
                 String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-                String fileName = "/eusecom/androideshop/inventura/productsean1.xml";
+                String fileName = "/eusecom/" + adresarxx + "/inventura/productsean1.xml";
                 //File myFile = new File("/mnt/sdcard/categories.xml");
                 File myFile = new File(baseDir + File.separator + fileName);
 
@@ -233,9 +246,10 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
             getActivity().runOnUiThread(new Runnable() {
                 public void run() {
 
-                    adapter = new RVAdapter(getActivity(), mCountryModel);
+                    adapter = new RVAdapter(getActivity(), getActivity(), mCountryModel);
                     recyclerview.setAdapter(adapter);
-                    mCallback.onArticleSelected(11);
+                    int pocx = mCountryModel.size();
+                    mCallback.onArticleSelected(pocx);
 
                 }
             });

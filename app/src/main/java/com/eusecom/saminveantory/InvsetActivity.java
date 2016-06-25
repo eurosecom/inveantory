@@ -106,8 +106,10 @@ public class InvsetActivity extends Activity {
             .setTitle(getString(R.string.delinventory_nostore))
             .setMessage(getString(R.string.delinventoryok))
             .setPositiveButton(getString(R.string.textok), new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) { 
-                  
+                public void onClick(DialogInterface dialog, int which) {
+
+					Intent i = new Intent(getApplicationContext(), InventuraNOnewActivity.class);
+					startActivity(i);
                 	finish();
                 }
              })

@@ -96,7 +96,7 @@
     <string name="popiseditname">Name</string>
     <string name="popiseditprice">Price</string>
     <string name="popiseditmnoz">Quantity</string>
-    <string name="popiseditmj">mj</string>
+    <string name="popiseditmj">unit</string>
     <string name="popiseditspecify">Item description</string>
     <string name="popiseditdescription">Description</string>
     <string name="popiseditsave">Save</string>

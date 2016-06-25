@@ -1,9 +1,5 @@
 package com.eusecom.saminveantory;
  
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.json.JSONArray;
-
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
@@ -25,12 +21,15 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileInputStream;
-
+import org.json.JSONArray;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 
@@ -117,9 +116,9 @@ public class HladajActivity extends ListActivity {
 				
 				String pidxy = ((TextView) view.findViewById(R.id.pid)).getText().toString();
 				Intent i = new Intent();
-                i.putExtra(TAG_PIDX, pidxy);
-                setResult(101, i); 
-                finish();
+				i.putExtra(TAG_PIDX, pidxy);
+				setResult(101, i);
+				finish();
 				
 			}
         });
