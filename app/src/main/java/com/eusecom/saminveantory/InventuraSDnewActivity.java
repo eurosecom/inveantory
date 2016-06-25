@@ -301,6 +301,7 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
             extrasdm.putString("page", "3");
             idm.putExtras(extrasdm);
             startActivity(idm);
+            finish();
             return true;
         }
 

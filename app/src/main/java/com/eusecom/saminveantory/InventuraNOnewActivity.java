@@ -273,6 +273,17 @@ public class InventuraNOnewActivity extends AppCompatActivity implements DoSomet
             return true;
         }
 
+        if (id == R.id.setnostroreinventory) {
+
+            Intent idm = new Intent(getApplicationContext(), InvsetActivity.class);
+            Bundle extrasdm = new Bundle();
+            extrasdm.putString("page", "3");
+            idm.putExtras(extrasdm);
+            startActivity(idm);
+            finish();
+            return true;
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

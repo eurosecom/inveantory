@@ -7,6 +7,10 @@
         android:title="@string/title_activity_mojeobj">
     </item>
     <item
+        android:id="@+id/setnostroreinventory"
+        android:title="@string/setnostoreinventory">
+    </item>
+    <item
         android:id="@+id/delinventory_nostore"
         android:title="@string/delinventory_nostore">
     </item>

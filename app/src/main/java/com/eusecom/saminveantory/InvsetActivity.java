@@ -128,9 +128,11 @@ public class InvsetActivity extends Activity {
             .setTitle(getString(R.string.setnostore))
             .setMessage(getString(R.string.setnostoreinventory))
             .setPositiveButton(getString(R.string.textok), new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) { 
-                  
-                	finish();
+                public void onClick(DialogInterface dialog, int which) {
+
+					Intent i = new Intent(getApplicationContext(), InventuraSDnewActivity.class);
+					startActivity(i);
+					finish();
                 }
              })
 
@@ -434,9 +436,9 @@ public class InvsetActivity extends Activity {
                     fOut9.close();
         		}
             	
-            	Intent i = new Intent(getApplicationContext(), DemoinvActivity.class);
-                startActivity(i);
-                finish();
+            	//Intent i = new Intent(getApplicationContext(), DemoinvActivity.class);
+                //startActivity(i);
+                //finish();
                 
             } catch (Exception e) {
                 //Toast.makeText(getBaseContext(), e.getMessage(),Toast.LENGTH_SHORT).show();
