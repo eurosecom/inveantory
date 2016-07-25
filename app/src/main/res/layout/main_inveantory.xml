@@ -41,6 +41,15 @@
 			android:layout_below="@+id/btnEan"
 			android:text="@string/btneanno"/>
 
+        <Button android:id="@+id/btnQrcode"
+            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btnEanno"
+            android:text="@string/btnqrcode"/>
+
+
 			<TextView
 				android:id="@+id/iprofit"
 				android:visibility="invisible"

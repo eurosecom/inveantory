@@ -75,6 +75,7 @@
     <string name="btneanx">vstupEAN</string>
     <string name="btnean">Vstup EAN inventúry</string>
     <string name="btneanno">Vstup EAN vzorov</string>
+    <string name="btnqrcode">Vstup QR kódov</string>
     <string name="strean">EAN inventúra</string>
     <string name="streanno">EAN vzory</string>
     <string name="zostavyean">Stav zásob</string>
@@ -197,10 +198,17 @@
         <item >Nastavenia</item>
     </string-array>
 
+    <string name="large_text">
+        "Materiál je metafora."
+    </string>
+
     <string name="mnotxt">Množstvo:</string>
     <string name="pricetxt">Cena:</string>
     <string name="idtxt">ID:</string>
     <string name="itemtxt">položka</string>
-
+    <string name="btnqrcreate">Vytvor QR kód</string>
+    <string name="btnqrsave">Ulož QR na SD</string>
+    <string name="btnqrupload">Upload QR</string>
+    <string name="btnqrdownfak">Stiahni faktúra info</string>
 
 </resources>

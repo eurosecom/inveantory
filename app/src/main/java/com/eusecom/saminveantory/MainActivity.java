@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
 
     ActionBarDrawerToggle mDrawerToggle;                  // Declaring Action Bar Drawer Toggle
 
-    Button btnEan, btnEanno;
+    Button btnEan, btnEanno, btnQrcode;
     String incomplet;
 
     @Override
@@ -152,6 +152,19 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View view) {
                 // Launching All products Activity
                 Intent i = new Intent(getApplicationContext(), InventuraNOnewActivity.class);
+                startActivity(i);
+
+            }
+        });
+
+        // btn qrcode
+        btnQrcode = (Button) findViewById(R.id.btnQrcode);
+        btnQrcode.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                // Launching All products Activity
+                Intent i = new Intent(getApplicationContext(), QrcodeActivity.class);
                 startActivity(i);
 
             }

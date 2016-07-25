@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/btnqrdownfak"
+        android:title="@string/btnqrdownfak">
+    </item>
+
+    <item
+        android:id="@+id/btnqrsave"
+        android:title="@string/btnqrsave">
+    </item>
+
+    <item
+    android:id="@+id/btnqrupload"
+    android:title="@string/btnqrupload">
+    </item>
+
+    <item
+        android:id="@+id/btnqrcreate"
+        android:title="@string/btnqrcreate">
+    </item>
+
+
+    <item
+        android:id="@+id/preferences"
+        android:title="@string/settings">
+    </item>
+
+
+    
+</menu>

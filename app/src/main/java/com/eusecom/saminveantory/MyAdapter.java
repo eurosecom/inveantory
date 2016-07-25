@@ -179,7 +179,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                             case 1:
 
                                 // View v at position pos is clicked.
-                                Intent i = new Intent(mContext, InventuraSDActivity.class);
+                                Intent i = new Intent(mContext, InventuraSDnewActivity.class);
                                 v.getContext().startActivity(i);
 
                                 break;
@@ -187,7 +187,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                             case 2:
 
                                 // View v at position pos is clicked.
-                                Intent i2 = new Intent(mContext, InventuraNOActivity.class);
+                                Intent i2 = new Intent(mContext, InventuraNOnewActivity.class);
                                 v.getContext().startActivity(i2);
 
                                 break;
