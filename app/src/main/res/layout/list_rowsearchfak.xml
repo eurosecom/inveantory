@@ -15,15 +15,6 @@
         android:textSize="18sp"
         />
 
-    <TextView
-        android:id="@+id/country_cis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_alignParentRight="true"
-        android:text="0"
-        android:layout_marginRight="5dp"
-        android:textSize="17sp"/>
 
 
     <TextView
@@ -35,29 +26,17 @@
         android:layout_alignParentLeft="true"
         android:text="ISo"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:textSize="17sp"/>
 
     <TextView
-    android:id="@+id/country_cen"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/country_name"
-    android:singleLine="true" android:layout_toLeftOf="@+id/country_mer"
-    android:text="0"
-    android:layout_marginRight="15dp" android:layout_marginLeft="15dp"
-    android:textSize="17sp"/>
-
-    <TextView
-        android:id="@+id/country_mer"
-        android:layout_width="30dp"
+        android:id="@+id/country_hod"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/country_name"
         android:singleLine="true"
         android:layout_alignParentRight="true"
         android:text="0"
         android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
         android:textSize="17sp"/>
 
 </RelativeLayout>

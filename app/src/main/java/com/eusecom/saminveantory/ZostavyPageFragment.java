@@ -282,6 +282,7 @@ public class ZostavyPageFragment extends Fragment {
                     Intent i = new Intent(getActivity(), NaserverActivity.class);
                     Bundle extras = new Bundle();
                     extras.putString("pagex", "0");
+                    extras.putString("fakx", "0");
                     i.putExtras(extras);
                     startActivity(i);
                     getActivity().finish();
@@ -298,6 +299,7 @@ public class ZostavyPageFragment extends Fragment {
                     Intent i = new Intent(getActivity(), NaserverActivity.class);
                     Bundle extras = new Bundle();
                     extras.putString("pagex", "1");
+                    extras.putString("fakx", "0");
                     i.putExtras(extras);
                     startActivity(i);
                     getActivity().finish();

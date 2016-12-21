@@ -1,18 +1,5 @@
 package com.eusecom.saminveantory;
  
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import org.json.JSONArray;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -40,6 +27,21 @@ import android.widget.TextView;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import org.json.JSONArray;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
  
 public class InventuraNOActivity extends ListActivity {
  
@@ -130,7 +132,7 @@ public class InventuraNOActivity extends ListActivity {
         inputAllServer.setText(SettingsActivity.getServerName(this));
         inputAllUser = (TextView) findViewById(R.id.inputAllUser);
         inputAllUser.setText("Nick/" + SettingsActivity.getNickName(this) + "/ID/" + SettingsActivity.getUserId(this) + "/PSW/" 
-                + SettingsActivity.getUserPsw(this) + "/druhID/" + SettingsActivity.getDruhId(this));
+                + SettingsActivity.getUserPsw(this) + "/druhID/" + "99");
         
         String serverx = inputAllServer.getText().toString();
     	String delims3 = "[/]+";

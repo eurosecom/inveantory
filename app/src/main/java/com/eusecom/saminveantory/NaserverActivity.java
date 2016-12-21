@@ -1,11 +1,5 @@
 package com.eusecom.saminveantory;
 
-import it.sauronsoftware.ftp4j.FTPClient;
-import it.sauronsoftware.ftp4j.FTPDataTransferListener;
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,6 +16,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import it.sauronsoftware.ftp4j.FTPClient;
+import it.sauronsoftware.ftp4j.FTPDataTransferListener;
 
 @SuppressLint("SimpleDateFormat")
 public class NaserverActivity extends Activity implements OnClickListener {
@@ -42,7 +43,8 @@ public class NaserverActivity extends Activity implements OnClickListener {
 	String adresarxx="";
 	
 	private static final String TAG_PAGEX = "pagex";
-	String pagex;
+	private static final String TAG_FAKX = "fakx";
+	String pagex, fakx, firx;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class NaserverActivity extends Activity implements OnClickListener {
         
         Bundle extras = i.getExtras();
         pagex = extras.getString(TAG_PAGEX);
+		fakx = extras.getString(TAG_FAKX);
+		firx=SettingsActivity.getFir(this);
 
         btn = (Button) findViewById(R.id.btn);
         btn.setOnClickListener(this);
@@ -99,6 +103,7 @@ public class NaserverActivity extends Activity implements OnClickListener {
     	String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
     	String fileName = "/eusecom/" + adresarxx + "/inventura.csv";
     	if( pagex.equals("1")) { fileName = "/eusecom/" + adresarxx + "/inventura_nostore.csv"; }
+		if( pagex.equals("2")) { fileName = "/eusecom/" + adresarxx + "/qrcode.jpg"; }
     	File f = new File(baseDir + File.separator + fileName);
 		//File f = new File("/sdcard/logo.png");
 		
@@ -117,19 +122,25 @@ public class NaserverActivity extends Activity implements OnClickListener {
 			String FTP_HOST = SettingsActivity.getFtpserver(this).toString();
 			String FTP_USER = SettingsActivity.getFtpuser(this).toString();
 			String FTP_PASS = SettingsActivity.getFtppsw(this).toString();
+
+			String FTP_FOLDER = "/www_root/tmp/";
+			if( pagex.equals("2")) { FTP_FOLDER = "/www_root/"+ SettingsActivity.getFtpqr(this).toString(); }
 			
 			client.connect(FTP_HOST,21);
 			client.login(FTP_USER, FTP_PASS);
 			client.setType(FTPClient.TYPE_BINARY);
-			client.changeDirectory("/www_root/tmp/");
+			client.changeDirectory(FTP_FOLDER);
+			//if( pagex.equals("2")) { client.changeDirectory("/www_root/dokumenty/FIR" + firx + "/qrcode/"); }
 			
 			String from="inventura.csv";
 			if( pagex.equals("1")) { from="inventura_nostore.csv"; }
+			if( pagex.equals("2")) { from="qrcode.jpg"; }
 			Calendar c = Calendar.getInstance();   
 	        SimpleDateFormat df = new SimpleDateFormat("dd_MM_yyyy hh:mm:ss");
 	        String formattedDate = df.format(c.getTime());
 			String to="inv" + formattedDate + ".csv";
 			if( pagex.equals("1")) { to="inv" + formattedDate + "_nostore.csv"; }
+			if( pagex.equals("2")) { to="qr"+ fakx + ".jpg"; }
 			
 			client.upload(fileName, new MyTransferListener());
 			client.rename(from, to);

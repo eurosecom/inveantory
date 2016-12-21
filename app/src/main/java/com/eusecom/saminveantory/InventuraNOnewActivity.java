@@ -1,5 +1,4 @@
 package com.eusecom.saminveantory;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -49,7 +48,7 @@ import java.util.Random;
 public class InventuraNOnewActivity extends AppCompatActivity implements DoSomething2 {
 
     EditText inputMno, inputEan, inputAll, inputCis, inputCed, inputMer, inputNaz;
-    Button btnObjednaj, btnPoznamka;
+    Button btnObjednaj, btnPoznamka, btnSearch;
     TextView inputAllServer, popisEan;
 
     private ProgressDialog pDialog;
@@ -97,6 +96,9 @@ public class InventuraNOnewActivity extends AppCompatActivity implements DoSomet
         bf.setVisibility(View.GONE);
         View bs  = findViewById(R.id.btnScan);
         bs.setVisibility(View.INVISIBLE);
+
+        View bsc  = findViewById(R.id.btnSearch);
+        bsc.setVisibility(View.VISIBLE);
 
         inputNaz = (EditText) findViewById(R.id.inputNaz);
         inputMno = (EditText) findViewById(R.id.inputMno);
@@ -195,6 +197,21 @@ public class InventuraNOnewActivity extends AppCompatActivity implements DoSomet
 
                 Intent i = new Intent(getApplicationContext(), PoznamkaKosikSDActivity.class);
                 startActivity(i);
+
+            }
+        });
+
+        btnSearch = (Button) findViewById(R.id.btnSearch);
+
+        // poznamka button click event
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                inputNaz.requestFocus();
+                Intent ih = new Intent(getApplicationContext(), SearchRvActivity.class);
+                startActivityForResult(ih, 100);
 
             }
         });
@@ -304,11 +321,24 @@ public class InventuraNOnewActivity extends AppCompatActivity implements DoSomet
         if (resultCode == 101) {
 
             String pidxy = data.getStringExtra(TAG_PIDX);
-            //String pidxy = "0000000000001";
+            String cenxy = data.getStringExtra("cenx");
+            String merxy = data.getStringExtra("merx");
+            String cisxy = data.getStringExtra("cisx");
+            String namexy = data.getStringExtra("namex");
 
-            inputEan = (EditText) findViewById(R.id.inputEan);
-            inputEan.setText(pidxy);
+            inputNaz = (EditText) findViewById(R.id.inputNaz);
+            inputNaz.setText(namexy);
+            inputCed = (EditText) findViewById(R.id.inputCed);
+            inputCed.setText(cenxy);
+            inputMer = (EditText) findViewById(R.id.inputMer);
+            inputMer.setText(merxy);
+            inputCis = (EditText) findViewById(R.id.inputCis);
+            inputCis.setText(cisxy);
+
+
             inputMno.requestFocus();
+            inputMno.setSelectAllOnFocus(true);
+
 
         }
 
@@ -442,11 +472,20 @@ public class InventuraNOnewActivity extends AppCompatActivity implements DoSomet
                         idxs[i] = productsList.get(i).get("idxs");
                     }
 
-                    //Log.d("idxs2", idxs2[2]);
-                    mText = new ArrayList<>(Arrays.asList(texts));
-                    mMno = new ArrayList<>(Arrays.asList(mnos));
-                    mPrice = new ArrayList<>(Arrays.asList(prices));
-                    mIdx = new ArrayList<>(Arrays.asList(idxs));
+
+                    //to solve fail from 20.11.2016
+                    try {
+                        mText = new ArrayList<>(Arrays.asList(texts));
+                        mMno = new ArrayList<>(Arrays.asList(mnos));
+                        mPrice = new ArrayList<>(Arrays.asList(prices));
+                        mIdx = new ArrayList<>(Arrays.asList(idxs));
+                    }catch(NullPointerException e){
+                        String s= "";
+                        mText = new ArrayList<>(Arrays.asList(s.split(",")));
+                        mMno = new ArrayList<>(Arrays.asList(s.split(",")));
+                        mPrice = new ArrayList<>(Arrays.asList(s.split(",")));
+                        mIdx = new ArrayList<>(Arrays.asList(s.split(",")));
+                    }
 
                     //Log.d("mDataSet", mDataSet.toString());
                     //Log.d("myBidList", myBidList.toString());
@@ -692,6 +731,11 @@ public class InventuraNOnewActivity extends AppCompatActivity implements DoSomet
          * */
         protected String doInBackground(String... args) {
 
+            // updating UI from Background Thread
+            runOnUiThread(new Runnable() {
+                              public void run() {
+
+
             // getting updated data from EditTexts
             String name = inputNaz.getText().toString();
             String mnoz = inputMno.getText().toString();
@@ -760,6 +804,8 @@ public class InventuraNOnewActivity extends AppCompatActivity implements DoSomet
                 //Toast.makeText(getBaseContext(), e.getMessage(),Toast.LENGTH_SHORT).show();
             }
 
+                              }//koniec run
+            });//koniec runable
 
             return null;
         }

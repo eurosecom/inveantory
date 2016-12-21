@@ -2,8 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/btnchoosefak"
+        android:title="@string/btnchoosefak">
+    </item>
+
+    <item
         android:id="@+id/btnqrdownfak"
         android:title="@string/btnqrdownfak">
+    </item>
+
+    <item
+        android:id="@+id/btnqrxmlfak"
+        android:title="@string/btnqrxmlfak">
+    </item>
+
+    <item
+        android:id="@+id/btnqrcreate"
+        android:title="@string/btnqrcreate">
     </item>
 
     <item
@@ -17,10 +32,14 @@
     </item>
 
     <item
-        android:id="@+id/btnqrcreate"
-        android:title="@string/btnqrcreate">
+        android:id="@+id/btnqruploaddel"
+        android:title="@string/btnqruploaddel">
     </item>
 
+    <item
+        android:id="@+id/btnqraccount"
+        android:title="@string/btnqraccount">
+    </item>
 
     <item
         android:id="@+id/preferences"

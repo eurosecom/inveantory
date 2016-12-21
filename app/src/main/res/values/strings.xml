@@ -64,7 +64,11 @@
     <string name="webdata">Connecting to </string>
 
     <string name="fir_title">Number of company.</string>
-    <string name="fir_summary">Set the program to connect to Fantozzi.</string>
+    <string name="fir_summary">Number of company for info about invoices.</string>
+    <string name="firrok_title">Year accounting period.</string>
+    <string name="firrok_summary">Year accounting period for info about invoices.</string>
+    <string name="ftpqr_title">Ftp folder for saving QRcode.</string>
+    <string name="ftpqr_summary">Ftp folder for saving QRcode. Have to exist. For example subfolder/qrcode</string>
 
     <string name="potrebujetelocaldata">You need data source for the local function of the program ! Let set in Settings Local Data and choose Demo pattern items </string>
     <string name="niejelocaldata">You do not have a data source !</string>
@@ -83,7 +87,7 @@
     <string name="btneanx">inputEAN</string>
     <string name="btnean">Input EAN inventory</string>
     <string name="btneanno">Input EAN patterns</string>
-    <string name="btnqrcode">Input QR code</string>
+    <string name="btnqrcode">Create QR code</string>
     <string name="strean">EAN inventory</string>
     <string name="streanno">EAN patterns</string>
     <string name="zostavyean">List of the inventory</string>
@@ -92,6 +96,7 @@
 
     <string name="inventura">Inventory</string>
     <string name="popisean">EAN</string>
+    <string name="popisfak">Invoice number</string>
     <string name="popiscis">Number</string>
     <string name="popishod">Value</string>
     <string name="popiseditname">Name</string>
@@ -224,8 +229,18 @@
     <string name="itemtxt">item</string>
 
     <string name="btnqrcreate">Create QR code</string>
-    <string name="btnqrsave">Save QR to SD</string>
-    <string name="btnqrupload">Upload QR</string>
+    <string name="btnqrsave">Save QR code to SD</string>
+    <string name="btnqrupload">Upload QR code to ftp</string>
     <string name="btnqrdownfak">Down invoice info</string>
+    <string name="btnchoosefak">Choose invoice for info</string>
+    <string name="btnqrxmlfak">Save info of invoice to XML</string>
+    <string name="btnqruploaddel">Delete QR  code on ftp</string>
+    <string name="btnqraccount">Account from QR code</string>
 
+    <string name="niejecisfak">Invoices number for info is null</string>
+    <string name="setcisfak">Set invoices number for info!</string>
+    <string name="niejeqrjpg">Do not exist QR code on SD</string>
+    <string name="setqrjpg">Save QR code to SD!</string>
+    <string name="niejeqrxml">do not exist info of invoice at XML</string>
+    <string name="setqrxml">Save info of invoice to XML !</string>
 </resources>

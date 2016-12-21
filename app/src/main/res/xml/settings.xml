@@ -9,6 +9,39 @@
         android:title="@string/servername_title" />
 
     <EditTextPreference
+        android:key="nickname"
+        android:summary="@string/nickname_summary"
+        android:title="@string/nickname_title" />
+
+    <EditTextPreference
+        android:key="userid"
+        android:defaultValue="0"
+        android:summary="@string/userid_summary"
+        android:title="@string/userid_title" />
+
+    <EditTextPreference
+        android:key="username"
+        android:summary="@string/username_summary"
+        android:title="@string/username_title" />
+
+    <EditTextPreference
+        android:key="userpsw"
+        android:summary="@string/userpsw_summary"
+        android:title="@string/userpsw_title" />
+
+    <EditTextPreference
+        android:key="fir"
+        android:enabled="true"
+        android:summary="@string/fir_summary"
+        android:title="@string/fir_title" />
+
+    <EditTextPreference
+        android:key="firrok"
+        android:defaultValue="2016"
+        android:summary="@string/firrok_summary"
+        android:title="@string/firrok_title" />
+
+    <EditTextPreference
         android:key="ftpserver"
         android:summary="@string/ftpserver_popis"
         android:title="@string/ftpserver_title" />
@@ -22,6 +55,11 @@
         android:key="ftppsw"
         android:summary="@string/ftppsw_popis"
         android:title="@string/ftppsw_title" />
+
+    <EditTextPreference
+        android:key="ftpqr"
+        android:summary="@string/ftpqr_summary"
+        android:title="@string/ftpqr_title" />
     
     <EditTextPreference
         android:key="nostnum"
@@ -52,5 +90,6 @@
         android:defaultValue="ks"
         android:summary="@string/nostmer_summary"
         android:title="@string/nostmer_title" />
+
         
 </PreferenceScreen>

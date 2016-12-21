@@ -483,11 +483,20 @@ public class InventuraSDnewActivity extends AppCompatActivity implements DoSomet
                         idxs[i] = productsList.get(i).get("idxs");
                     }
 
-                    //Log.d("idxs2", idxs2[2]);
-                    mText = new ArrayList<>(Arrays.asList(texts));
-                    mMno = new ArrayList<>(Arrays.asList(mnos));
-                    mPrice = new ArrayList<>(Arrays.asList(prices));
-                    mIdx = new ArrayList<>(Arrays.asList(idxs));
+
+                    //to solve fail from 20.11.2016
+                    try {
+                        mText = new ArrayList<>(Arrays.asList(texts));
+                        mMno = new ArrayList<>(Arrays.asList(mnos));
+                        mPrice = new ArrayList<>(Arrays.asList(prices));
+                        mIdx = new ArrayList<>(Arrays.asList(idxs));
+                    }catch(NullPointerException e){
+                        String s= "";
+                        mText = new ArrayList<>(Arrays.asList(s.split(",")));
+                        mMno = new ArrayList<>(Arrays.asList(s.split(",")));
+                        mPrice = new ArrayList<>(Arrays.asList(s.split(",")));
+                        mIdx = new ArrayList<>(Arrays.asList(s.split(",")));
+                    }
 
                     //Log.d("mDataSet", mDataSet.toString());
                     //Log.d("myBidList", myBidList.toString());

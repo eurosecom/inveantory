@@ -1,8 +1,5 @@
 package com.eusecom.saminveantory;
 
-import java.io.File;
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -12,9 +9,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.util.Log;
 import android.widget.TextView;
-import android.os.StrictMode;
+
+import java.io.File;
+import java.util.ArrayList;
 
  
 public class ZmazOrderSDActivity extends Activity {
@@ -63,7 +63,7 @@ public class ZmazOrderSDActivity extends Activity {
         inputAllServer = (TextView) findViewById(R.id.inputAllServer);
         inputAllUser = (TextView) findViewById(R.id.inputAllUser);
         inputAllUser.setText("Nick/" + SettingsActivity.getNickName(this) + "/ID/" + SettingsActivity.getUserId(this) + "/PSW/" 
-                + SettingsActivity.getUserPsw(this) + "/druhID/" + SettingsActivity.getDruhId(this) 
+                + SettingsActivity.getUserPsw(this) + "/druhID/" + "99"
                 + "/Doklad/" + "" + "/Stol/" + "1");
         
         dokladx = "";

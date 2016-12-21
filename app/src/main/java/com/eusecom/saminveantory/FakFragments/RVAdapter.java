@@ -1,4 +1,4 @@
-package com.eusecom.saminveantory.TabFragments;
+package com.eusecom.saminveantory.FakFragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -56,23 +56,10 @@ public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder> {
                     TextView isoclick= (TextView) v.findViewById(R.id.country_iso);
                     String poslean=isoclick.getText().toString();
 
-                    TextView iscen= (TextView) v.findViewById(R.id.country_cen);
-                    String poslcen=iscen.getText().toString();
-
-                    TextView ismer= (TextView) v.findViewById(R.id.country_mer);
-                    String poslmer=ismer.getText().toString();
-
-                    TextView iscis= (TextView) v.findViewById(R.id.country_cis);
-                    String poslcis=iscis.getText().toString();
-
                     Toast.makeText(mContext, "longclick pos. name " + poslname + " " + poslean, Toast.LENGTH_SHORT).show();
 
                     Intent i = new Intent();
                     i.putExtra("pidx", poslean);
-                    i.putExtra("namex", poslname);
-                    i.putExtra("cenx", poslcen);
-                    i.putExtra("merx", poslmer);
-                    i.putExtra("cisx", poslcis);
                     mActivity.setResult(101, i);
                     mActivity.finish();
 
@@ -84,7 +71,7 @@ public class RVAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_rowsearchrv, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_rowsearchfak, viewGroup, false);
         return new ItemViewHolder(view);
     }
 

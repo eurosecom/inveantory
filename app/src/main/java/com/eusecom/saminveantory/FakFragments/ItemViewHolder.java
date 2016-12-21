@@ -1,4 +1,4 @@
-package com.eusecom.saminveantory.TabFragments;
+package com.eusecom.saminveantory.FakFragments;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -13,18 +13,14 @@ public class ItemViewHolder extends RecyclerView.ViewHolder  implements View.OnC
 
     private TextView name_TextView;
     private TextView iso_TextView;
-    private TextView cen_TextView;
-    private TextView mer_TextView;
-    private TextView cis_TextView;
+    private TextView hod_TextView;
     private ClickListener clickListener;
 
     public ItemViewHolder(View itemView) {
         super(itemView);
         name_TextView = (TextView) itemView.findViewById(R.id.country_name);
         iso_TextView = (TextView) itemView.findViewById(R.id.country_iso);
-        cen_TextView = (TextView) itemView.findViewById(R.id.country_cen);
-        mer_TextView = (TextView) itemView.findViewById(R.id.country_mer);
-        cis_TextView = (TextView) itemView.findViewById(R.id.country_cis);
+        hod_TextView = (TextView) itemView.findViewById(R.id.country_hod);
 
         itemView.setOnClickListener(this);
         itemView.setOnLongClickListener(this);
@@ -34,9 +30,8 @@ public class ItemViewHolder extends RecyclerView.ViewHolder  implements View.OnC
     public void bind(CountryModel countryModel) {
         name_TextView.setText(countryModel.getName());
         iso_TextView.setText(countryModel.getisoCode());
-        cen_TextView.setText(countryModel.getisCen());
-        mer_TextView.setText(countryModel.getisMer());
-        cis_TextView.setText(countryModel.getisCis());
+        hod_TextView.setText(countryModel.getfakhod());
+
     }
 
     /* Interface for handling clicks - both normal and long ones. */

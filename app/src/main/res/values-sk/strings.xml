@@ -56,7 +56,11 @@
     <string name="webdata">Pripojenie k </string>
     
     <string name="fir_title">Číslo nastavenej firmy.</string>
-    <string name="fir_summary">Nastaví program pri pripojení na Fantozziho.</string>
+    <string name="fir_summary">Číslo nastavenej firmy pre info o faktúrach.</string>
+    <string name="firrok_title">Účtovný rok.</string>
+    <string name="firrok_summary">Účtovný rok pre info o faktúrach.</string>
+    <string name="ftpqr_title">Ftp adresár pre ukladanie QR kódov.</string>
+    <string name="ftpqr_summary">Ftp adresár pre ukladanie QR kódov. Musí existovať. Napríklad subfolder/qrcode</string>
     
     <string name="potrebujetelocaldata">Pre lokálnu funkciu programu potrebujete dátové zdrojové súbory ! V nastavení zvolte Dáta lokálne a vyberte Demo skladové položky !</string>
     <string name="niejelocaldata">Nemáte dátové zdrojové súbory !</string>
@@ -75,7 +79,7 @@
     <string name="btneanx">vstupEAN</string>
     <string name="btnean">Vstup EAN inventúry</string>
     <string name="btneanno">Vstup EAN vzorov</string>
-    <string name="btnqrcode">Vstup QR kódov</string>
+    <string name="btnqrcode">Vytváranie QR kódov</string>
     <string name="strean">EAN inventúra</string>
     <string name="streanno">EAN vzory</string>
     <string name="zostavyean">Stav zásob</string>
@@ -84,6 +88,7 @@
     
     <string name="inventura">Inventúra</string>
     <string name="popisean">EAN</string>
+    <string name="popisfak">Faktúra číslo</string>
     <string name="popiscis">Číslo</string>
     <string name="popishod">Hodnota</string>
     <string name="popiseditname">Názov</string>        
@@ -207,8 +212,19 @@
     <string name="idtxt">ID:</string>
     <string name="itemtxt">položka</string>
     <string name="btnqrcreate">Vytvor QR kód</string>
-    <string name="btnqrsave">Ulož QR na SD</string>
-    <string name="btnqrupload">Upload QR</string>
-    <string name="btnqrdownfak">Stiahni faktúra info</string>
+    <string name="btnqrsave">Ulož QR kód na SD</string>
+    <string name="btnqrupload">Upload QR kód na ftp</string>
+    <string name="btnqrdownfak">Stiahni info o faktúre</string>
+    <string name="btnchoosefak">Vybrať faktúru pre info </string>
+    <string name="btnqrxmlfak">Ulož info o faktúre do XML</string>
+    <string name="btnqruploaddel">Zmazať QR kód na ftp</string>
+    <string name="btnqraccount">Zaúčtovať QR kód</string>
+
+    <string name="niejecisfak">Číslo faktúry pre info je nula</string>
+    <string name="setcisfak">Nastavte číslo faktúry pre info!</string>
+    <string name="niejeqrjpg">Neexistuje QR kód na SD</string>
+    <string name="setqrjpg">Uložte najprv QR kód na SD!</string>
+    <string name="niejeqrxml">Info o faktúre nie je v XML</string>
+    <string name="setqrxml">Uložte najprv info o faktúre do XML!</string>
 
 </resources>

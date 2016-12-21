@@ -28,6 +28,7 @@
         <activity android:name="com.eusecom.saminveantory.InventuraSDnewActivity" android:label="@string/strean"> </activity>
         <activity android:name="com.eusecom.saminveantory.InventuraNOnewActivity" android:label="@string/streanno"> </activity>
         <activity android:name="com.eusecom.saminveantory.SearchRvActivity" android:label="@string/inventura"> </activity>
+        <activity android:name="com.eusecom.saminveantory.SearchFakActivity" android:label="@string/inventura"> </activity>
         <activity android:name="com.eusecom.saminveantory.QrcodeActivity" android:label="@string/btnqrcode"> </activity>
         <activity
             android:name="com.eusecom.saminveantory.ZmazInventuraSDActivity"
@@ -97,6 +98,7 @@
             android:name="com.eusecom.saminveantory.ScrollingActivity"
             android:label="@string/inventura" >
         </activity>
+        <activity android:name="com.eusecom.saminveantory.UploadFileActivity" android:label="@string/app_name"> </activity>
     </application>
 
 </manifest>

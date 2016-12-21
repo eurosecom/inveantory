@@ -1,15 +1,15 @@
-package com.eusecom.saminveantory.TabFragments;
+package com.eusecom.saminveantory.FakFragments;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,17 +17,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.eusecom.saminveantory.JSONParser;
+import com.eusecom.saminveantory.MCrypt;
 import com.eusecom.saminveantory.R;
 import com.eusecom.saminveantory.SettingsActivity;
-import com.eusecom.saminveantory.XMLDOMParser;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -41,9 +45,18 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
     static final String NODE_EAN = "ean";
     static final String NODE_NAME = "name";
     static final String NODE_PID = "pid";
-    static final String NODE_MER= "mer";
-    static final String NODE_PRICE = "price";
     String adresarxx="";
+
+    private static final String TAG_SUCCESS = "success";
+    private static final String TAG_PRODUCTS = "products";
+    private static final String TAG_PRODUCT = "product";
+    private static final String TAG_ICO = "ico";
+    private static final String TAG_DOK = "dok";
+    private static final String TAG_HOD = "hod";
+    JSONParser jsonParser = new JSONParser();
+    String encrypted;
+    // products JSONArray
+    JSONArray products = null;
 
     OnHeadlineSelectedListener mCallback;
 
@@ -93,11 +106,6 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
         String[] locales = Locale.getISOCountries();
         mCountryModel = new ArrayList<>();
 
-        //for (String countryCode : locales) {
-        //    Locale obj = new Locale("", countryCode);
-        //    mCountryModel.add(new CountryModel(obj.getDisplayCountry(), obj.getISO3Country()));
-        //}
-
 
         String serverx = SettingsActivity.getServerName(getActivity());
         String delims3 = "[/]+";
@@ -109,7 +117,7 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
         }
 
         // Loading products in Background Thread
-        new LoadAllProducts().execute();
+        new GetInvoices().execute();
 
 
     }
@@ -174,76 +182,135 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
 
 
 
-    class LoadAllProducts extends AsyncTask<String, String, String> {
 
-        /**
-         * Before starting background thread Show Progress Dialog
-         * */
+
+
+    class GetInvoices extends AsyncTask<String, String, String> {
+
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(getActivity());
             pDialog.setMessage(getString(R.string.progallproducts));
             pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
+            pDialog.setCancelable(true);
             pDialog.show();
         }
 
-        /**
-         * getting All products from url
-         * */
-        protected String doInBackground(String... args) {
 
-            String akehl="1";
-            String hladaj1x = ""; String hladaj2x = ""; String hladaj3x = "";
+        protected String doInBackground(String... params) {
 
 
-            XMLDOMParser parser = new XMLDOMParser();
-            try {
+                    int success;
+                    try {
 
-                String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-                String fileName = "/eusecom/" + adresarxx + "/inventura/productsean1.xml";
-                //File myFile = new File("/mnt/sdcard/categories.xml");
-                File myFile = new File(baseDir + File.separator + fileName);
-
-                Document doc = parser.getDocument(new FileInputStream(myFile));
-
-                // Get elements by name employee
-                NodeList nodeList = doc.getElementsByTagName(NODE_PRODUCT);
-
-                /*
-                 * for each <employee> element get text of name, salary and
-                 * designation
-                 */
-                // Here, we have only one <employee> element
-                for (int i = 0; i < nodeList.getLength(); i++) {
-                    Element e = (Element) nodeList.item(i);
-                    String id = parser.getValue(e, NODE_EAN);
-                    String name = parser.getValue(e, NODE_NAME);
-                    String price = parser.getValue(e, NODE_PRICE);
-                    String merx = parser.getValue(e, NODE_MER);
-                    String cisx = parser.getValue(e, NODE_PID);
-
-                    mCountryModel.add(new CountryModel(name, id, price, merx, cisx));
-
-                    //koniec for
-                }
+                        String akyserver="www.eshoptest.sk";
+                        String serverxx = SettingsActivity.getServerName(getActivity());
+                        String delims3 = "[/]+";
+                        String[] serverxxx = serverxx.split(delims3);
+                        if (serverxxx.length < 2 ) {
+                            adresarxx="androideshop";
+                            akyserver="www.eshoptest.sk";
+                        }else{
+                            adresarxx=serverxxx[1];
+                            akyserver=serverxxx[0];
+                        }
 
 
+                        // Building Parameters
+                        String serverx = akyserver + "/androiducto";
+                        String userx = "Nick/" + SettingsActivity.getNickName(getActivity())
+                                + "/Id/" + SettingsActivity.getUserId(getActivity())
+                                + "/Psw/" + SettingsActivity.getUserPsw(getActivity())
+                                + "/druhID/99/Doklad/1";
 
-            } catch (Exception e) {
+                        String ftpqrencodex=SettingsActivity.getFtpqr(getActivity());
+                        String ftpqrencode="";
+                        try {
+                            ftpqrencode = URLEncoder.encode(ftpqrencodex, "UTF-8");
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
 
-            }
+                        String prmall = "fir/" + SettingsActivity.getFir(getActivity())
+                                + "/rok/" + SettingsActivity.getFirrok(getActivity())
+                                + "/qrfolder/" + ftpqrencode;
+                        String fakx = "0";
+
+                        String userxplus = userx + "/" + fakx;
+
+                        //String userhash = sha1Hash( userx );
+                        MCrypt mcrypt = new MCrypt();
+                    	/* Encrypt */
+                        try {
+                            encrypted = MCrypt.bytesToHex( mcrypt.encrypt(userxplus) );
+                        } catch (Exception e1) {
+                            // TODO Auto-generated catch block
+                            e1.printStackTrace();
+                        }
+
+                        List<NameValuePair> params2 = new ArrayList<NameValuePair>();
+                        params2.add(new BasicNameValuePair("serverx", serverx));
+                        params2.add(new BasicNameValuePair("prmall", prmall));
+                        params2.add(new BasicNameValuePair("userhash", encrypted));
+
+                        // getting product details by making HTTP request
+                        // Note that product details url will use GET request
+
+                        JSONObject json = jsonParser.makeHttpRequest(
+                                "http://www.ala.sk/androidfanti/get_infoallfak.php", "GET", params2);
+
+                        // check your log for json response
+                        Log.d("json", json.toString());
+
+                        // json success tag
+                        success = json.getInt(TAG_SUCCESS);
+                        if (success == 1) {
+                            // successfully received product details
+
+                            // Getting Array of Products
+                            products = json.getJSONArray(TAG_PRODUCTS);
+                            Log.d("products", products.toString());
+
+                            // looping through All Products
+                            for (int i = 0; i < products.length(); i++) {
+                                JSONObject c = products.getJSONObject(i);
+
+                                // Storing each json item in variable
+                                String icx = c.getString(TAG_ICO);
+                                String dox = c.getString(TAG_DOK);
+                                String hox = c.getString(TAG_HOD);
+
+
+                                // creating new HashMap
+                                HashMap<String, String> map = new HashMap<String, String>();
+
+                                // adding each child node to HashMap key => value
+                                map.put(TAG_ICO, icx);
+                                map.put(TAG_DOK, dox);
+                                map.put(TAG_HOD, dox);
+
+                                // adding HashList to ArrayList
+                                mCountryModel.add(new CountryModel(icx, dox, hox));
+
+                            }
+
+
+                        }else{
+                            // products not found
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
 
             return null;
         }
 
-        /**
-         * After completing background task Dismiss the progress dialog
-         * **/
+
         protected void onPostExecute(String file_url) {
-            // dismiss the dialog after getting all products
+            // dismiss the dialog once got all details
             pDialog.dismiss();
             // updating UI from Background Thread
             getActivity().runOnUiThread(new Runnable() {
@@ -256,10 +323,7 @@ public class TabOneFragment extends Fragment implements SearchView.OnQueryTextLi
 
                 }
             });
-
         }
+    }//end getInvoices
 
-    }
-    //koniec loadall
-
-}
+}//end of fragment

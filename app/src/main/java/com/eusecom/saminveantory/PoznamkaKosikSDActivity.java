@@ -1,23 +1,22 @@
 package com.eusecom.saminveantory;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.StrictMode;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.os.Environment;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-
-import android.os.StrictMode;
  
 public class PoznamkaKosikSDActivity extends Activity {
  
@@ -54,7 +53,7 @@ public class PoznamkaKosikSDActivity extends Activity {
         inputEdiServer.setText(SettingsActivity.getServerName(this));
         inputEdiUser = (TextView) findViewById(R.id.inputEdiUser);
         inputEdiUser.setText("Nick/" + SettingsActivity.getNickName(this) + "/ID/" + SettingsActivity.getUserId(this) + "/PSW/" 
-                + SettingsActivity.getUserPsw(this) + "/druhID/" + SettingsActivity.getDruhId(this));
+                + SettingsActivity.getUserPsw(this) + "/druhID/" + "99");
         
         String serverx = inputEdiServer.getText().toString();
     	String delims3 = "[/]+";

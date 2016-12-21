@@ -18,8 +18,10 @@ package com.eusecom.saminveantory;
 /* The Projekt began 1.5.2016 */
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -71,6 +73,10 @@ public class MainActivity extends ActionBarActivity {
      */
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
+
+        View backgroundImage = findViewById(R.id.background);
+        Drawable background = backgroundImage.getBackground();
+        background.setAlpha(20);
 
         incomplet = "0";
         String serverx = SettingsActivity.getServerName(this);
@@ -172,6 +178,17 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+        //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (Drawer.isDrawerOpen(GravityCompat.START)) {
+            Drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

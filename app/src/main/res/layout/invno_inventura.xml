@@ -91,15 +91,12 @@
     		android:layout_margin="1dp"
         	android:layout_marginBottom="1dp"
     		android:layout_weight="2" />
-         
-         <TextView
-            android:text="@string/popiseditname"
-    		android:visibility="visible"
-    		android:layout_width="match_parent"
-    		android:layout_height="wrap_content"
-    		android:layout_margin="1dp"
-    		android:layout_marginBottom="1dp"
-    		android:layout_weight="1" />
+
+		 <Button android:id="@+id/btnSearch"
+			 android:layout_width="fill_parent"
+			 android:layout_height="40dp"
+			 android:text="@string/popiseditname"
+			 android:layout_weight="1"/>
 
     	</LinearLayout>
     
@@ -117,6 +114,7 @@
         android:singleLine="true"
         android:inputType="number"
     	android:layout_weight="2" />
+
          
          <EditText
     		android:id="@+id/inputNaz"

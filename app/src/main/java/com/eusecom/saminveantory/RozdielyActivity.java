@@ -133,7 +133,7 @@ public class RozdielyActivity extends ListActivity implements SimpleGestureListe
         inputAllServer.setText(SettingsActivity.getServerName(this));
         inputAllUser = (TextView) findViewById(R.id.inputAllUser);
         inputAllUser.setText("Nick/" + SettingsActivity.getNickName(this) + "/ID/" + SettingsActivity.getUserId(this) + "/PSW/" 
-                + SettingsActivity.getUserPsw(this) + "/druhID/" + SettingsActivity.getDruhId(this));
+                + SettingsActivity.getUserPsw(this) + "/druhID/" + "99");
         
         String serverx = inputAllServer.getText().toString();
     	String delims3 = "[/]+";
